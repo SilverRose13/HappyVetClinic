@@ -11,6 +11,10 @@ public class Condition {
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "id", nullable = false)
     private UUID id;
+    private Diseases diseases;
+    @Column(name = "symptoms", nullable = false)
+    private String symptoms;
+
     public UUID getId() {
         return id;
     }
@@ -18,13 +22,10 @@ public class Condition {
         this.id = id;
     }
 
-    @Column(name = "name", nullable = false)
-    private String name;
-    public String getName(){return name;}
-    public void setName(String name) {
-        this.name = name;
+    public String getSymptoms(){return symptoms;}
+    public void setSymptoms(String name) {
+        this.symptoms = symptoms;
     }
-
 
 
 }

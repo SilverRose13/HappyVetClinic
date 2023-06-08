@@ -3,8 +3,11 @@ package edu.pjwstk.s19701.model;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.UUID;
 
+@Entity
+@Table(name = "Visit")
 public class Visit {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -16,7 +19,6 @@ public class Visit {
     public void setId(UUID id) {
         this.id = id;
     }
-
     @Column(name = "pet", nullable = false)
     private String pet;
     public String getPet(){return pet;}
@@ -37,4 +39,17 @@ public class Visit {
     public void setDateTime(LocalDateTime dateTime) {
         this.dateTime = dateTime;
     }
+
+
+
+    //conditions
+    @ManyToMany(targetEntity = Visit.class, cascade = {CascadeType.ALL})
+    @JoinTable(
+            name = "Diagnosis",
+            joinColumns = @JoinColumn(name = "id_visit"),
+            inverseJoinColumns = @JoinColumn(name = "id_condition")
+    )
+    private ArrayList<Condition> conditions;
+
+
 }
