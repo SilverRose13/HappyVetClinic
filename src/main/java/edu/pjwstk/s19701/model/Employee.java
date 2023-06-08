@@ -28,7 +28,7 @@ public class Employee extends Person {
     @Override
     public void setUsername(String username) {
         System.out.println("Setting username for employee: "  + username);
-        super.setName(username);
+        super.setUsername(username);
     }
 
     public Clinic getClinic() {
