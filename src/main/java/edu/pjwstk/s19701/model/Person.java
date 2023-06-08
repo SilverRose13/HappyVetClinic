@@ -15,9 +15,18 @@ public class  Person {
     @Column(name = "id", nullable = false)
     @Id
     private UUID personId;
+
+    @Column(name = "name", nullable = false)
     private String name;
+
+    @Column(name = "surname", nullable = false)
     private String surname;
+
+    //username has to be unique
+    @Column(name = "username", nullable = false, unique = true)
     private String username;
+
+    @Column(name = "password", nullable = false)
     private String password;
 
     public UUID getPersonId() {
