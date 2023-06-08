@@ -13,7 +13,7 @@ public class Pet {
     private UUID id;
     @Column(name = "name", nullable = false)
     private String name;
-    @Column(name = "birthday",nullable = true)
+    @Column(name = "birthday")
     private LocalDateTime birthday;
 
     public UUID getId() {

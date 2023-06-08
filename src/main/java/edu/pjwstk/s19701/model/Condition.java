@@ -23,7 +23,7 @@ public class Condition {
     }
 
     public String getSymptoms(){return symptoms;}
-    public void setSymptoms(String name) {
+    public void setSymptoms(String symptoms) {
         this.symptoms = symptoms;
     }
 
