@@ -14,12 +14,15 @@ public class Clinic {
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "id", nullable = false)
     private UUID id;
-
     public UUID getId() {
         return id;
     }
-
     public void setId(UUID id) {
         this.id = id;
     }
+
+    private String address;
+    public String getAddress(){return address;}
+    public void setAddress(String address){this.address = address;}
+
 }
