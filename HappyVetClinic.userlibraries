@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="Gradle: org.hibernate.orm:hibernate-core:6.2.4.Final">
+    <archive path="C:/Users/artur.chwedoruk/.gradle/caches/modules-2/files-2.1/org.hibernate.orm/hibernate-core/6.2.4.Final/427b1b48c381e8bf74bfb453d63ba52e5432e3d9/hibernate-core-6.2.4.Final.jar" />
+  </library>
+  <library name="Gradle: com.h2database:h2:2.1.214">
+    <archive path="C:/Users/artur.chwedoruk/.gradle/caches/modules-2/files-2.1/com.h2database/h2/2.1.214/d5c2005c9e3279201e12d4776c948578b16bf8b2/h2-2.1.214.jar" />
+  </library>
+  <library name="Gradle: org.junit.jupiter:junit-jupiter:5.9.1">
+    <archive path="C:/Users/artur.chwedoruk/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter/5.9.1/9274d3757e224bc02eae367bd481062a263c150b/junit-jupiter-5.9.1.jar" />
+  </library>
+  <library name="Gradle: jakarta.persistence:jakarta.persistence-api:3.1.0">
+    <archive path="C:/Users/artur.chwedoruk/.gradle/caches/modules-2/files-2.1/jakarta.persistence/jakarta.persistence-api/3.1.0/66901fa1c373c6aff65c13791cc11da72060a8d6/jakarta.persistence-api-3.1.0.jar" />
+  </library>
+  <library name="Gradle: jakarta.transaction:jakarta.transaction-api:2.0.1">
+    <archive path="C:/Users/artur.chwedoruk/.gradle/caches/modules-2/files-2.1/jakarta.transaction/jakarta.transaction-api/2.0.1/51a520e3fae406abb84e2e1148e6746ce3f80a1a/jakarta.transaction-api-2.0.1.jar" />
+  </library>
+  <library name="Gradle: org.junit.jupiter:junit-jupiter-params:5.9.1">
+    <archive path="C:/Users/artur.chwedoruk/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-params/5.9.1/ffcd1013edaeee112be11fcddeb38882d79238de/junit-jupiter-params-5.9.1.jar" />
+  </library>
+  <library name="Gradle: org.junit.jupiter:junit-jupiter-api:5.9.1">
+    <archive path="C:/Users/artur.chwedoruk/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-api/5.9.1/7bb53fbc0173e9f6a9d21d58297af94b1f2f9ce1/junit-jupiter-api-5.9.1.jar" />
+  </library>
+  <library name="Gradle: org.apiguardian:apiguardian-api:1.1.2">
+    <archive path="C:/Users/artur.chwedoruk/.gradle/caches/modules-2/files-2.1/org.apiguardian/apiguardian-api/1.1.2/a231e0d844d2721b0fa1b238006d15c6ded6842a/apiguardian-api-1.1.2.jar" />
+  </library>
+  <library name="Gradle: org.junit.platform:junit-platform-commons:1.9.1">
+    <archive path="C:/Users/artur.chwedoruk/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-commons/1.9.1/3145f821b5cd10abcdc5f925baa5fffa6f1b628f/junit-platform-commons-1.9.1.jar" />
+  </library>
+  <library name="Gradle: org.opentest4j:opentest4j:1.2.0">
+    <archive path="C:/Users/artur.chwedoruk/.gradle/caches/modules-2/files-2.1/org.opentest4j/opentest4j/1.2.0/28c11eb91f9b6d8e200631d46e20a7f407f2a046/opentest4j-1.2.0.jar" />
+  </library>
+  <library name="Gradle: org.jboss.logging:jboss-logging:3.5.0.Final">
+    <archive path="C:/Users/artur.chwedoruk/.gradle/caches/modules-2/files-2.1/org.jboss.logging/jboss-logging/3.5.0.Final/c19307cc11f28f5e2679347e633a3294d865334d/jboss-logging-3.5.0.Final.jar" />
+  </library>
+  <library name="Gradle: org.hibernate.common:hibernate-commons-annotations:6.0.6.Final">
+    <archive path="C:/Users/artur.chwedoruk/.gradle/caches/modules-2/files-2.1/org.hibernate.common/hibernate-commons-annotations/6.0.6.Final/77a5f94b56d49508e0ee334751db5b78e5ccd50c/hibernate-commons-annotations-6.0.6.Final.jar" />
+  </library>
+  <library name="Gradle: io.smallrye:jandex:3.0.5">
+    <archive path="C:/Users/artur.chwedoruk/.gradle/caches/modules-2/files-2.1/io.smallrye/jandex/3.0.5/c548a4871b552292dbdd65409d3fda145c8925c1/jandex-3.0.5.jar" />
+  </library>
+  <library name="Gradle: com.fasterxml:classmate:1.5.1">
+    <archive path="C:/Users/artur.chwedoruk/.gradle/caches/modules-2/files-2.1/com.fasterxml/classmate/1.5.1/3fe0bed568c62df5e89f4f174c101eab25345b6c/classmate-1.5.1.jar" />
+  </library>
+  <library name="Gradle: net.bytebuddy:byte-buddy:1.12.18">
+    <archive path="C:/Users/artur.chwedoruk/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy/1.12.18/875a9c3f29d2f6f499dfd60d76e97a343f9b1233/byte-buddy-1.12.18.jar" />
+  </library>
+  <library name="Gradle: org.glassfish.jaxb:jaxb-runtime:4.0.2">
+    <archive path="C:/Users/artur.chwedoruk/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/4.0.2/e4e4e0c5b0d42054d00dc4023901572a60d368c7/jaxb-runtime-4.0.2.jar" />
+  </library>
+  <library name="Gradle: jakarta.xml.bind:jakarta.xml.bind-api:4.0.0">
+    <archive path="C:/Users/artur.chwedoruk/.gradle/caches/modules-2/files-2.1/jakarta.xml.bind/jakarta.xml.bind-api/4.0.0/bbb399208d288b15ec101fa4fcfc4bd77cedc97a/jakarta.xml.bind-api-4.0.0.jar" />
+  </library>
+  <library name="Gradle: jakarta.inject:jakarta.inject-api:2.0.1">
+    <archive path="C:/Users/artur.chwedoruk/.gradle/caches/modules-2/files-2.1/jakarta.inject/jakarta.inject-api/2.0.1/4c28afe1991a941d7702fe1362c365f0a8641d1e/jakarta.inject-api-2.0.1.jar" />
+  </library>
+  <library name="Gradle: org.antlr:antlr4-runtime:4.10.1">
+    <archive path="C:/Users/artur.chwedoruk/.gradle/caches/modules-2/files-2.1/org.antlr/antlr4-runtime/4.10.1/10839f875928f59c622d675091d51a43ea0dc5f7/antlr4-runtime-4.10.1.jar" />
+  </library>
+  <library name="Gradle: org.junit.jupiter:junit-jupiter-engine:5.9.1">
+    <archive path="C:/Users/artur.chwedoruk/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-engine/5.9.1/1bf771097bde296c3ab174861954e8aafaaf2e94/junit-jupiter-engine-5.9.1.jar" />
+  </library>
+  <library name="Gradle: org.glassfish.jaxb:jaxb-core:4.0.2">
+    <archive path="C:/Users/artur.chwedoruk/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-core/4.0.2/8c29249f6c10f4ee08967783831580b0f5c5360/jaxb-core-4.0.2.jar" />
+  </library>
+  <library name="Gradle: jakarta.activation:jakarta.activation-api:2.1.1">
+    <archive path="C:/Users/artur.chwedoruk/.gradle/caches/modules-2/files-2.1/jakarta.activation/jakarta.activation-api/2.1.1/88c774ab863a21fb2fc4219af95379fafe499a31/jakarta.activation-api-2.1.1.jar" />
+  </library>
+  <library name="Gradle: org.junit.platform:junit-platform-engine:1.9.1">
+    <archive path="C:/Users/artur.chwedoruk/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-engine/1.9.1/83591e5089d6cea5f324aa3ecca9b19d5a275803/junit-platform-engine-1.9.1.jar" />
+  </library>
+  <library name="Gradle: org.eclipse.angus:angus-activation:2.0.0">
+    <archive path="C:/Users/artur.chwedoruk/.gradle/caches/modules-2/files-2.1/org.eclipse.angus/angus-activation/2.0.0/72369f4e2314d38de2dcbb277141ef0226f73151/angus-activation-2.0.0.jar" />
+  </library>
+  <library name="Gradle: org.glassfish.jaxb:txw2:4.0.2">
+    <archive path="C:/Users/artur.chwedoruk/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/txw2/4.0.2/24e167be69c29ebb7ee0a3b1f9b546f1dfd111fc/txw2-4.0.2.jar" />
+  </library>
+  <library name="Gradle: com.sun.istack:istack-commons-runtime:4.1.1">
+    <archive path="C:/Users/artur.chwedoruk/.gradle/caches/modules-2/files-2.1/com.sun.istack/istack-commons-runtime/4.1.1/9b3769c76235bc283b060da4fae2318c6d53f07e/istack-commons-runtime-4.1.1.jar" />
+  </library>
+  <library name="libs">
+    <archive path="C:/workspace/iam-policy-management/ada/build/libs/ada-1.270.0.0.jar" />
+    <archive path="C:/workspace/iam-policy-management/ada/build/libs/ada-1.270.0.0-sources.jar" />
+  </library>
+  <library name="libs1">
+    <archive path="C:/workspace/iam-policy-management/ada/build/libs/ada-1.270.0.0.jar" />
+    <archive path="C:/workspace/iam-policy-management/ada/build/libs/ada-1.270.0.0-sources.jar" />
+  </library>
+  <library name="Python 3.9 (iam-heimdall-lambda) interpreter library">
+    <archive path="C:/Users/artur.chwedoruk/AppData/Local/Programs/Python/Python39/DLLs" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Local/Programs/Python/Python39/Lib" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Local/Programs/Python/Python39" />
+    <archive path="C:/workspaces/iam-heimdall-lambda/venv" />
+    <archive path="C:/workspaces/iam-heimdall-lambda/venv/Lib/site-packages" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Local/JetBrains/IntelliJIdea2022.2/python_stubs/-393611947" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/python-skeletons" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stdlib" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/six" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/boto" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/mock" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/pytz" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/toml" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/annoy" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/babel" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/emoji" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/first" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/fpdf2" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/ldap3" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/polib" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/redis" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/regex" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/retry" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/ujson" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/bleach" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/caldav" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/docopt" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/hdbcli" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/invoke" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/passpy" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/Pillow" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/psutil" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/pycurl" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/pynput" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/pysftp" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/PyYAML" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/stripe" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/xxhash" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/appdirs" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/certifi" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/chardet" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/chevron" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/passlib" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/pyaudio" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/PyMySQL" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/pyvmomi" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/slumber" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/tzlocal" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/urllib3" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/vobject" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/aiofiles" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/colorama" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/croniter" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/docutils" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/html5lib" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/httplib2" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/jmespath" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/Markdown" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/oauthlib" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/openpyxl" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/paramiko" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/psycopg2" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/pyflakes" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/Pygments" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/requests" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/selenium" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/tabulate" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/toposort" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/waitress" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/braintree" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/decorator" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/freezegun" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/playsound" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/pyOpenSSL" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/pyRFC3339" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/termcolor" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/ttkthemes" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/typed-ast" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/cachetools" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/commonmark" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/dateparser" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/Deprecated" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/Flask-Cors" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/jsonschema" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/pyfarmhash" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/Send2Trash" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/setuptools" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/simplejson" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/SQLAlchemy" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/contextvars" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/entrypoints" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/flake8-2020" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/JACK-Client" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/mysqlclient" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/opentracing" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/pep8-naming" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/prettytable" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/python-nmap" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/atomicwrites" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/aws-xray-sdk" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/cryptography" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/editdistance" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/click-spinner" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/DateTimeRange" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/humanfriendly" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/python-gflags" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/beautifulsoup4" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/flake8-bugbear" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/python-slugify" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/singledispatch" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/flake8-builtins" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/flake8-simplify" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/mypy-extensions" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/python-dateutil" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/Flask-SQLAlchemy" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/flake8-docstrings" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/flake8-plugin-utils" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/pytest-lazy-fixture" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/flake8-rst-docstrings" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/flake8-typing-imports" />
+    <archive path="C:/Users/artur.chwedoruk/AppData/Roaming/JetBrains/IntelliJIdea2023.1/plugins/python/helpers/typeshed/stubs/backports.ssl_match_hostname" />
+  </library>
+</eclipse-userlibraries>
+

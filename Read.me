@@ -1,0 +1,47 @@
+Initial version for Happy Vet Clinic
+
+As a backend is used H2 database (in memory).
+Each start of the application create database instance and push to it sample data-set.
+
+Presented project contains example for:
+
+1. Classes, attributes
+//https://www.javatpoint.com/attributes-in-dbms
+    - Persistence class: @DataManager
+    - Complex attribute: hmm...? @TODO
+    - Optional attribute: hmm...? @TODO
+    - Multi-valued attribute: @Diseases in Diagnosis
+    - Class attribute: APPLICATION_NAME in @Main class.
+    - Derived attribute: @Visit contains conditions descriptions via Diagnosis object
+    - Class method: (it is basic component of programming language, in the given example each class contains methods)
+    - Override: setName in Employee class (adding logging on set method)
+    - Overload: (tutaj metoda posiada jednakowa nazwe, ale przyjmuje rozne argumenty. Na razie nie widze przykladu na cos takiego)
+
+
+2. Associations
+Designed project contains example of below associations:
+    - Binary: Pet - Visit (?) // https://vertabelo.com/blog/n-ary-relationship-types/
+    - With attribute: Employee - specialisation // https://bellekens.com/2011/08/10/uml-best-practice-attribute-or-association/
+    - Qualified: Diagnosis - Visit // https://www.informit.com/articles/article.aspx?p=1398623&seqNum=16
+    - Composition: Condition - Diagnosis (Condition description is integral part of Diagnosis) //https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-aggregation-vs-composition/
+
+3. Inheritance
+    - Disjoint (@TODO)
+    - Abstract @Person (@User) is an abstract for an @Owner and @Employee
+    - Polymorphic Person -> employee, owner. (tutaj stworzyc metode w PErson ktora bedzie inaczej printowala u Employee, a inaczej u Ownera)
+    - Overlapping (does not contains yet example?)
+    - Multi-aspect // java does not support it // https://www.geeksforgeeks.org/java-and-multiple-inheritance/
+    - Dynamic // java does not support dynamic inheritance. In java such use-cases are realized by composition and delegation strategy.
+    // https://stackoverflow.com/questions/36685181/dynamic-inheritance-in-java
+
+4. Constraints
+    - Attributes @TODO
+    - Unique: username in @User must be unique
+    - Subset @TODO
+    - Ordered @TODO
+    - Bag @TODO
+    - Xor @TODO
+
+5. Relation model
+    1:* Onwer - pet (One owner, can have many pets)
+    *:* (@TODO)
