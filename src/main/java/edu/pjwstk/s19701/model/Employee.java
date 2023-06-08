@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
+import java.util.UUID;
+
 @Entity
 public class Employee extends Person {
     @ManyToOne
@@ -29,6 +31,12 @@ public class Employee extends Person {
     public void setUsername(String username) {
         System.out.println("Setting username for employee: "  + username);
         super.setUsername(username);
+    }
+
+    public void setUsername() {
+        String randomUuid = String.valueOf(UUID.randomUUID());
+        super.setUsername(randomUuid);
+        System.out.println("Setting username for employee: "  + randomUuid);
     }
 
     public Clinic getClinic() {
