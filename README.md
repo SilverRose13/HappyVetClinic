@@ -8,6 +8,7 @@ Initial version for Happy Vet Clinic
 - create diagrams
 - validate sonarlint findings
 - verify persistence (if h2 is okay)
+- handle hibernate exceptions (on duplicated usernames, etc.)
 
 As a backend is used H2 database (in memory).
 
@@ -30,14 +31,15 @@ Presented project contains example for:
 1. Classes, attributes
 //https://www.javatpoint.com/attributes-in-dbms
     - Persistence class: @DataManager
-    - Complex attribute: hmm...? @TODO
-    - Optional attribute: hmm...? @TODO
+    - Complex attribute: Employee and Clinic
+      - /* For example, if a person has more than one office and each office has an address made from a street number and city. So the address is a composite attribute, and offices are multi valued attributes, So combing them is called complex attributes. */
+    - Optional attribute: Skipped
     - Multi-valued attribute: @Diseases in Diagnosis
     - Class attribute: APPLICATION_NAME in @Main class.
     - Derived attribute: @Visit contains conditions descriptions via Diagnosis object
     - Class method: (it is basic component of programming language, in the given example each class contains methods)
     - Override: setName in Employee class (adding logging on set method)
-    - Overload: (tutaj metoda posiada jednakowa nazwe, ale przyjmuje rozne argumenty. Na razie nie widze przykladu na cos takiego)
+    - Overload: setUsername(), and setUsername(String). First method will generate random uuid as username, the second one with the String will user username accordingly to given username
 
 
 2. Associations
@@ -51,7 +53,7 @@ Designed project contains example of below associations:
     - Disjoint (@TODO)
     - Abstract @Person (@User) is an abstract for an @Owner and @Employee
     - Polymorphic Person -> employee, owner. (tutaj stworzyc metode w PErson ktora bedzie inaczej printowala u Employee, a inaczej u Ownera)
-    - Overlapping (does not contain yet example?)
+    - Overlapping (@TODO) does not contain yet example?)
     - Multi-aspect // java does not support it // https://www.geeksforgeeks.org/java-and-multiple-inheritance/
     - Dynamic // java does not support dynamic inheritance. In java such use-cases are realized by composition and delegation strategy.
     // https://stackoverflow.com/questions/36685181/dynamic-inheritance-in-java
