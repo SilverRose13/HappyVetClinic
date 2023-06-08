@@ -16,6 +16,18 @@ public class Employee extends Person {
         super.setName(name);
     }
 
+    @Override
+    public void setSurname(String surname) {
+        System.out.println("Setting surname for employee: "  + surname);
+        super.setSurname(surname);
+    }
+
+    @Override
+    public void setUsername(String username) {
+        System.out.println("Setting username for employee: "  + username);
+        super.setName(username);
+    }
+
     public Clinic getClinic() {
         return clinic;
     }
