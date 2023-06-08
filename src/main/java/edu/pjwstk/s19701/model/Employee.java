@@ -1,5 +1,6 @@
 package edu.pjwstk.s19701.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -10,6 +11,8 @@ public class Employee extends Person {
     @JoinColumn(name = "clinic_id")
     private Clinic clinic;
 
+    @Column(name = "job_title")
+    private JobTitle jobTitle;
     @Override
     public void setName(String name) {
         System.out.println("Setting name for employee: "  + name);
