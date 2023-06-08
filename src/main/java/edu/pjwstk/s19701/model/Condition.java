@@ -27,5 +27,11 @@ public class Condition {
         this.symptoms = symptoms;
     }
 
+    public Diseases getDiseases() {
+        return diseases;
+    }
 
+    public void setDiseases(Diseases diseases) {
+        this.diseases = diseases;
+    }
 }

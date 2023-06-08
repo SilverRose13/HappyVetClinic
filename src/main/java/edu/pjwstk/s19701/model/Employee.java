@@ -39,5 +39,11 @@ public class Employee extends Person {
         this.clinic = clinic;
     }
 
+    public JobTitle getJobTitle() {
+        return jobTitle;
+    }
 
+    public void setJobTitle(JobTitle jobTitle) {
+        this.jobTitle = jobTitle;
+    }
 }
