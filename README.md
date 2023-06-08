@@ -1,6 +1,28 @@
 Initial version for Happy Vet Clinic
 
+@TODO
+- finish ReadMe explanations
+- add java docs
+- add comments
+- create UI
+- create diagrams
+- validate sonarlint findings
+- verify persistence (if h2 is okay)
+
 As a backend is used H2 database (in memory).
+
+    Link to h2 console:
+        http://www.h2database.com/html/download.html
+    Temurin JDK 17
+        https://adoptium.net/installation/
+###
+> java --version
+
+> openjdk 17.0.7 2023-04-18
+
+> OpenJDK Runtime Environment Temurin-17.0.7+7 (build 17.0.7+7)
+###
+
 Each start of the application create database instance and push to it sample data-set.
 
 Presented project contains example for:
@@ -29,7 +51,7 @@ Designed project contains example of below associations:
     - Disjoint (@TODO)
     - Abstract @Person (@User) is an abstract for an @Owner and @Employee
     - Polymorphic Person -> employee, owner. (tutaj stworzyc metode w PErson ktora bedzie inaczej printowala u Employee, a inaczej u Ownera)
-    - Overlapping (does not contains yet example?)
+    - Overlapping (does not contain yet example?)
     - Multi-aspect // java does not support it // https://www.geeksforgeeks.org/java-and-multiple-inheritance/
     - Dynamic // java does not support dynamic inheritance. In java such use-cases are realized by composition and delegation strategy.
     // https://stackoverflow.com/questions/36685181/dynamic-inheritance-in-java
