@@ -2,8 +2,8 @@ package edu.pjwstk.s19701.model;
 
 import jakarta.persistence.*;
 
-import java.time.LocalDateTime;
-import java.util.ArrayList;
+import java.time.LocalDateTime
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -20,12 +20,19 @@ public class Visit {
         this.id = id;
     }
     @Column(name = "pet", nullable = false)
-    private String pet;
-    public String getPet(){return pet;}
-    public void setId_pet(String pet) {
+    private UUID pet;
+    public UUID getPet(){return pet;}
+    public void setIdPet(UUID pet) {
         this.pet = pet;
     }
-
+    //conditions
+    @ManyToMany(targetEntity = Visit.class, cascade = {CascadeType.ALL})
+    @JoinTable(
+            name = "Diagnosis",
+            joinColumns = @JoinColumn(name = "id_visit"),
+            inverseJoinColumns = @JoinColumn(name = "id_condition")
+    )
+    private List<Condition> conditions;
     @Column(name = "employee", nullable = false)
     private String employee;
     public String getEmployee(){return employee;}
@@ -41,25 +48,12 @@ public class Visit {
     }
 
 
-
-    //conditions
-    @ManyToMany(targetEntity = Visit.class, cascade = {CascadeType.ALL})
-    @JoinTable(
-            name = "Diagnosis",
-            joinColumns = @JoinColumn(name = "id_visit"),
-            inverseJoinColumns = @JoinColumn(name = "id_condition")
-    )
-    private ArrayList<Condition> conditions;
-
-    public ArrayList<Condition> getConditions() {
+    public List<Condition> getConditions() {
         return conditions;
     }
 
-    public void setConditions(ArrayList<Condition> conditions) {
+    public void setConditions(List<Condition> conditions) {
         this.conditions = conditions;
     }
 
-    public void setPet(String pet) {
-        this.pet = pet;
-    }
 }
