@@ -67,7 +67,7 @@ Designed project contains example of below associations:
     - Xor @TODO
 
 5. Relation model
-    1:*  Clinic - Employee (One clinic can have many employees
-    // Owner - pet (One owner, can have many pets)
-    *:* Visit - Condition (Many conditions can be diagnosed during one visit,
+    - 1:*  Clinic - Employee (One clinic can have many employees
+       - Owner - pet (One owner, can have many pets)
+    - many:many Visit - Condition (Many conditions can be diagnosed during one visit,
         but  the same condition can be diagnosed during multiple visits) (@TODO)
