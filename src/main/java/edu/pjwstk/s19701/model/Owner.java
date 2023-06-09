@@ -4,6 +4,9 @@ import jakarta.persistence.Entity;
 
 @Entity
 public class Owner extends Person {
+
+
+
     @Override
     public void setName(String name) {
         System.out.println("Setting name for pet owner: "  + name);

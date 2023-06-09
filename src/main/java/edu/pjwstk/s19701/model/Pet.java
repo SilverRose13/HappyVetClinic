@@ -3,9 +3,11 @@ package edu.pjwstk.s19701.model;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.Set;
 import java.util.UUID;
 
 @Entity
+@Table(name = "pet")
 public class Pet {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -15,6 +17,10 @@ public class Pet {
     private String name;
     @Column(name = "birthday")
     private LocalDateTime birthday;
+
+    @OneToMany
+    @JoinColumn(name = "visit_id")
+    private Set<Visit> visits;
 
     public UUID getId() {
         return id;

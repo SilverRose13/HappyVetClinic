@@ -19,12 +19,12 @@ public class Visit {
     public void setId(UUID id) {
         this.id = id;
     }
-    @Column(name = "pet", nullable = false)
+    /*@Column(name = "pet", nullable = false)
     private UUID pet;
     public UUID getPet(){return pet;}
     public void setIdPet(UUID pet) {
         this.pet = pet;
-    }
+    }*/
     //conditions
     @ManyToMany(targetEntity = Visit.class, cascade = {CascadeType.ALL})
     @JoinTable(
@@ -34,14 +34,23 @@ public class Visit {
     )
     private List<Condition> conditions;
     @Column(name = "employee", nullable = false)
-    private String employee;
-    public String getEmployee(){return employee;}
-    public void setEmployee(String employee) {
+    //private String employee;
+    public Employee getEmployee(){return employee;}
+    public void setEmployee(Employee employee) {
         this.employee = employee;
     }
 
     @Column(name = "dateTime", nullable = false)
     private LocalDateTime dateTime;
+
+    @ManyToOne
+    @JoinColumn(name = "id_pet")
+    private Pet pet;
+
+    @ManyToOne
+    @JoinColumn(name = "id_employee")
+    private Employee employee;
+
     public LocalDateTime getDateTime(){return dateTime;}
     public void setDateTime(LocalDateTime dateTime) {
         this.dateTime = dateTime;
