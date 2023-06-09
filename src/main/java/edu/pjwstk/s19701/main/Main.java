@@ -1,8 +1,9 @@
 package edu.pjwstk.s19701.main;
 
 import edu.pjwstk.s19701.controller.DataManager;
-import edu.pjwstk.s19701.view.MainWindow;
-import edu.pjwstk.s19701.view.Window;
+import edu.pjwstk.s19701.view.LoginWindow;
+
+import javax.swing.*;
 
 /**
  * Run project here.
@@ -10,6 +11,8 @@ import edu.pjwstk.s19701.view.Window;
 public class Main {
     public static final String APPLICATION_NAME = "Happy Vet Clinic";
 
+    private static final int INIT_WIDTH = 640;
+    private static final int INIT_HEIGHT = 480;
 
     public static void main(String[] args) {
 
@@ -17,8 +20,16 @@ public class Main {
         DataManager dataManager = new DataManager();
         dataManager.initDataSet();
 
-        Window window = new MainWindow();
-        window.display();
+        runGUI();
+    }
 
+    private static void runGUI() {
+        JFrame frame = new JFrame("LoginWindow");
+        frame.setContentPane(new LoginWindow().getMainPanel());
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+
+        frame.setSize(INIT_WIDTH, INIT_HEIGHT);
     }
 }
