@@ -1,24 +1,26 @@
 package edu.pjwstk.s19701.controller;
 
 import edu.pjwstk.s19701.model.Clinic;
-import edu.pjwstk.s19701.model.Employee;
+import edu.pjwstk.s19701.model.employee.Employee;
 import edu.pjwstk.s19701.model.JobTitle;
-import edu.pjwstk.s19701.model.Person;
+import edu.pjwstk.s19701.model.owner.Owner;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import java.util.List;
 import java.util.logging.Logger;
 
 /**
  * Class managing data. Creating initial data-set in one-transaction using Hibernate ORM library.
  */
 public class DataManager {
+
     static Logger logger = Logger.getLogger(DataManager.class.getName());
 
     public void initDataSet(){
         Clinic clinic = createClinic();
         createEmployee(clinic);
+        createOwner();
     }
 
     private Clinic createClinic() {
@@ -41,6 +43,16 @@ public class DataManager {
         save(employee);
     }
 
+    private static void createOwner() {
+        Owner owner = new Owner();
+        owner.setName("Ownername");
+        owner.setSurname("OwnerSurname");
+        owner.setPassword("owner");
+        owner.setUsername("Owner");
+
+        save(owner);
+    }
+
     public static void save(Object o){
         Transaction transaction = null;
         try (Session session = HibernateSessionFactory.getSessionFactory().openSession()) {
@@ -52,20 +64,17 @@ public class DataManager {
 
             // commit transaction
             transaction.commit();
-        } catch (Exception e) {
+        } catch (HibernateException he) {
+            System.err.println(he.getMessage());
             if (transaction != null) {
                 transaction.rollback();
             }
+        } catch (Exception e) {
             e.printStackTrace();
+            if (transaction != null) {
+                transaction.rollback();
+            }
         }
     }
 
-    public void readEmployee() {
-        try (Session session = HibernateSessionFactory.getSessionFactory().openSession()) {
-            List<Person> person = session.createQuery("from Employee ", Person.class).list();
-            person.forEach(s -> logger.info("System user ID: " + s.getName() + " id: " + s.getPersonId()));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 }
