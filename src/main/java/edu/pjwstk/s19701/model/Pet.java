@@ -22,6 +22,10 @@ public class Pet {
     @JoinColumn(name = "visit_id")
     private Set<Visit> visits;
 
+    @ManyToOne
+    @JoinColumn(name = "id_owner")
+    private UUID owner;
+
     public UUID getId() {
         return id;
     }
