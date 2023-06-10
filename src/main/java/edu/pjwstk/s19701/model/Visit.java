@@ -1,5 +1,6 @@
 package edu.pjwstk.s19701.model;
 
+import edu.pjwstk.s19701.model.employee.Employee;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
