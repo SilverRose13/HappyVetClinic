@@ -1,4 +1,4 @@
-package edu.pjwstk.s19701.model;
+package edu.pjwstk.s19701.model.person;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;

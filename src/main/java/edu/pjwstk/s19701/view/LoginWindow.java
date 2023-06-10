@@ -1,6 +1,9 @@
 package edu.pjwstk.s19701.view;
 
 
+import edu.pjwstk.s19701.controller.LoginController;
+import edu.pjwstk.s19701.main.Main;
+
 import javax.swing.*;
 
 public class LoginWindow extends JFrame {
@@ -13,7 +16,24 @@ public class LoginWindow extends JFrame {
     JPasswordField passwordField;
 
     public LoginWindow() {
-        loginButton.addActionListener(event -> JOptionPane.showMessageDialog(loginButton, "Login action performed"));
+        loginButton.addActionListener(event -> {
+            LoginController loginController = new LoginController();
+
+            if(loginController.loginEmployee(usernameField.getText(), String.valueOf(passwordField.getPassword()))) {
+                JFrame frame = new JFrame("SearchForPet");
+                frame.show();
+                dispose();
+                return;
+            }
+
+            if(loginController.loginOwner(usernameField.getText(), String.valueOf(passwordField.getPassword()))) {
+                JOptionPane.showMessageDialog(loginButton, "Logged as Pet Owner: " + usernameField.getText());
+                return;
+            }
+
+            JOptionPane.showMessageDialog(loginButton, "Bad credentials");
+        });
+
     }
 
     public JPanel getMainPanel() {

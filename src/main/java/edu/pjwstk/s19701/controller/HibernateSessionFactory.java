@@ -1,5 +1,6 @@
 package edu.pjwstk.s19701.controller;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
@@ -34,6 +35,15 @@ public class HibernateSessionFactory {
             }
         }
         return sessionFactory;
+    }
+
+    @SuppressWarnings("java:S2259")
+    public static Session getOrOpenSession() {
+        if (getSessionFactory().isOpen() && getSessionFactory().getCurrentSession().isOpen()) {
+            return getSessionFactory().getCurrentSession();
+        } else {
+            return getSessionFactory().openSession();
+        }
     }
 
     public static void shutdown() {

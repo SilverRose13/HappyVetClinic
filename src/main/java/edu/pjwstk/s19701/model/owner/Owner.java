@@ -1,5 +1,6 @@
-package edu.pjwstk.s19701.model;
+package edu.pjwstk.s19701.model.owner;
 
+import edu.pjwstk.s19701.model.person.Person;
 import jakarta.persistence.Entity;
 
 @Entity
@@ -22,6 +23,6 @@ public class Owner extends Person {
     @Override
     public void setUsername(String username) {
         System.out.println("Setting username for pet owner: "  + username);
-        super.setName(username);
+        super.setUsername(username);
     }
 }

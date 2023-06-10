@@ -1,5 +1,8 @@
-package edu.pjwstk.s19701.model;
+package edu.pjwstk.s19701.model.employee;
 
+import edu.pjwstk.s19701.model.Clinic;
+import edu.pjwstk.s19701.model.JobTitle;
+import edu.pjwstk.s19701.model.person.Person;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
