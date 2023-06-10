@@ -13,6 +13,15 @@ public class SearchForPet {
     private JLabel nameLabel;
     private JLabel surnameLabel;
     private JLabel searchForPetLabel;
+    public JPanel mainSearchForPet;
+
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("SearchForPet");
+        frame.setContentPane(new SearchForPet().mainSearchForPet);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+    }
 
     private void createUIComponents() {
         // TODO: place custom component creation code here
