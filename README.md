@@ -1,14 +1,16 @@
 Initial version for Happy Vet Clinic
 
 @TODO
+- verify persistence (if h2 is okay)
+   - nope, hibernate mappings failing for particular classes :c 
+- create UI
+   - initial flow on Login is done 
+   - 
 - finish ReadMe explanations
 - add java docs
 - add comments
-- create UI
 - create diagrams
 - validate sonarlint findings
-- verify persistence (if h2 is okay)
-- handle hibernate exceptions (on duplicated usernames, etc.)
 
 As a backend is used H2 database (in memory).
 
