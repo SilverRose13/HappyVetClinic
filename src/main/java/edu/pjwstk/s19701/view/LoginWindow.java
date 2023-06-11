@@ -11,6 +11,8 @@ public class LoginWindow extends JFrame {
     JTextField usernameField;
     JButton loginButton;
     JLabel appName;
+
+    @SuppressWarnings("unused")
     JLabel passwordLabel;
     JLabel usernameLabel;
     JPasswordField passwordField;
@@ -22,8 +24,10 @@ public class LoginWindow extends JFrame {
             if(loginController.loginEmployee(usernameField.getText(), String.valueOf(passwordField.getPassword()))) {
                 JFrame frame = new JFrame("SearchForPet");
                 frame.setContentPane(new SearchForPet().mainSearchForPet);
-                frame.show();
-                dispose();
+                frame.setVisible(true);
+
+                frame.setSize(Main.INIT_WIDTH, Main.INIT_HEIGHT);
+                Main.frame.dispose();
                 return;
             }
 

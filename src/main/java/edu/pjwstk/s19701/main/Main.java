@@ -1,10 +1,9 @@
 package edu.pjwstk.s19701.main;
 
 import edu.pjwstk.s19701.controller.DataManager;
-import edu.pjwstk.s19701.view.SearchForPet;
+import edu.pjwstk.s19701.view.LoginWindow;
 
 import javax.swing.*;
-import java.awt.*;
 
 /**
  * Run project here.
@@ -12,8 +11,10 @@ import java.awt.*;
 public class Main {
     public static final String APPLICATION_NAME = "Happy Vet Clinic";
 
-    private static final int INIT_WIDTH = 640;
-    private static final int INIT_HEIGHT = 480;
+    public static final JFrame frame = new JFrame("LoginWindow");
+
+    public static final int INIT_WIDTH = 640;
+    public static final int INIT_HEIGHT = 480;
 
     public static void main(String[] args) {
 
@@ -25,14 +26,10 @@ public class Main {
     }
 
     private static void runGUI() {
-        JFrame frame = new JFrame("LoginWindow");
-//        frame.setContentPane(new LoginWindow().getMainPanel());
-        frame.setContentPane(new SearchForPet().mainSearchForPet);
-        frame.setLayout(new GridBagLayout());
+        frame.setContentPane(new LoginWindow().getMainPanel());
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
-
         frame.setSize(INIT_WIDTH, INIT_HEIGHT);
     }
 }
