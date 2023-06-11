@@ -14,11 +14,14 @@ public class SearchForPet {
     private JLabel surnameLabel;
     private JLabel searchForPetLabel;
     public JPanel mainSearchForPet;
+    private JPanel SearchByChip;
+    private JPanel SearchByOwner;
+    private JPanel searchByOwnerPanel;
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("SearchForPet");
         frame.setContentPane(new SearchForPet().mainSearchForPet);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
     }

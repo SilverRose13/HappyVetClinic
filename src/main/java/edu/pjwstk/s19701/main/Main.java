@@ -2,6 +2,7 @@ package edu.pjwstk.s19701.main;
 
 import edu.pjwstk.s19701.controller.DataManager;
 import edu.pjwstk.s19701.view.LoginWindow;
+import edu.pjwstk.s19701.view.SearchForPet;
 
 import javax.swing.*;
 
@@ -25,7 +26,8 @@ public class Main {
 
     private static void runGUI() {
         JFrame frame = new JFrame("LoginWindow");
-        frame.setContentPane(new LoginWindow().getMainPanel());
+//        frame.setContentPane(new LoginWindow().getMainPanel());
+        frame.setContentPane(new SearchForPet().mainSearchForPet);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);

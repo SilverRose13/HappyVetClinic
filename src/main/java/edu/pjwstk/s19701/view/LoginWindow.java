@@ -21,6 +21,7 @@ public class LoginWindow extends JFrame {
 
             if(loginController.loginEmployee(usernameField.getText(), String.valueOf(passwordField.getPassword()))) {
                 JFrame frame = new JFrame("SearchForPet");
+                frame.setContentPane(new SearchForPet().mainSearchForPet);
                 frame.show();
                 dispose();
                 return;
