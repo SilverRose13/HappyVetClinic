@@ -16,7 +16,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="c5ded" class="javax.swing.JLabel" binding="searchByChipLabel" custom-create="true">
+          <component id="c5ded" class="javax.swing.JLabel" binding="searchByChipLabel">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -24,7 +24,7 @@
               <text value="Search by Chip"/>
             </properties>
           </component>
-          <component id="b1a02" class="javax.swing.JTextField" binding="chipNumberTextField" custom-create="true">
+          <component id="b1a02" class="javax.swing.JTextField" binding="chipNumberTextField">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -44,7 +44,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="3a190" class="javax.swing.JLabel" binding="searchByOwnerLabel" custom-create="true">
+          <component id="3a190" class="javax.swing.JLabel" binding="searchByOwnerLabel">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -60,7 +60,7 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="3d632" class="javax.swing.JTextField" binding="nameTextField" custom-create="true" default-binding="true">
+              <component id="3d632" class="javax.swing.JTextField" binding="nameTextField" default-binding="true">
                 <constraints>
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
@@ -70,7 +70,7 @@
                   <text value="Name"/>
                 </properties>
               </component>
-              <component id="58349" class="javax.swing.JTextField" binding="surnameTextField" custom-create="true" default-binding="true">
+              <component id="58349" class="javax.swing.JTextField" binding="surnameTextField" default-binding="true">
                 <constraints>
                   <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
@@ -80,7 +80,7 @@
                   <text value="Surname"/>
                 </properties>
               </component>
-              <component id="68267" class="javax.swing.JLabel" binding="nameLabel" custom-create="true">
+              <component id="68267" class="javax.swing.JLabel" binding="nameLabel">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -88,7 +88,7 @@
                   <text value="Name"/>
                 </properties>
               </component>
-              <component id="ef30a" class="javax.swing.JLabel" binding="surnameLabel" custom-create="true">
+              <component id="ef30a" class="javax.swing.JLabel" binding="surnameLabel">
                 <constraints>
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -100,7 +100,7 @@
           </grid>
         </children>
       </grid>
-      <component id="4f7f2" class="javax.swing.JButton" binding="searchByChipButton" custom-create="true">
+      <component id="4f7f2" class="javax.swing.JButton" binding="searchByChipButton">
         <constraints>
           <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -108,7 +108,7 @@
           <text value="Search"/>
         </properties>
       </component>
-      <component id="ec5ee" class="javax.swing.JButton" binding="searchByOwnerButton" custom-create="true">
+      <component id="ec5ee" class="javax.swing.JButton" binding="searchByOwnerButton">
         <constraints>
           <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -116,7 +116,7 @@
           <text value="Search"/>
         </properties>
       </component>
-      <component id="ceab8" class="javax.swing.JLabel" binding="searchForPetLabel" custom-create="true">
+      <component id="ceab8" class="javax.swing.JLabel" binding="searchForPetLabel">
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
