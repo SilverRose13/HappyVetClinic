@@ -1,5 +1,6 @@
 package edu.pjwstk.s19701.model;
 
+import edu.pjwstk.s19701.model.owner.Owner;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
@@ -23,8 +24,8 @@ public class Pet {
     private Set<Visit> visits;
 
     @ManyToOne
-    @JoinColumn(name = "id_owner")
-    private UUID owner;
+    @JoinColumn(name = "owner")
+    private Owner owner;
 
     public UUID getId() {
         return id;
