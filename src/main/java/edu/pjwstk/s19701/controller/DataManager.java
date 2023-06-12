@@ -4,10 +4,13 @@ import edu.pjwstk.s19701.model.Clinic;
 import edu.pjwstk.s19701.model.employee.Employee;
 import edu.pjwstk.s19701.model.JobTitle;
 import edu.pjwstk.s19701.model.owner.Owner;
+import edu.pjwstk.s19701.model.pet.Pet;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.logging.Logger;
 
 /**
@@ -21,6 +24,7 @@ public class DataManager {
         Clinic clinic = createClinic();
         createEmployee(clinic);
         createOwner();
+        createPet();
     }
 
     private Clinic createClinic() {
@@ -51,6 +55,16 @@ public class DataManager {
         owner.setUsername("Owner");
 
         save(owner);
+    }
+
+    private static void createPet(){
+        Pet pet = new Pet();
+
+        pet.setChipNumber("9876543210");
+        pet.setName("Zazu");
+        pet.setBirthday(LocalDate.of(2020, 12, 12));
+
+        save(pet);
     }
 
     public static void save(Object o){

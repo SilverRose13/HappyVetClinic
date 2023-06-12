@@ -2,6 +2,7 @@ package edu.pjwstk.s19701.view;
 
 import edu.pjwstk.s19701.controller.SearchByChipCotroller;
 import edu.pjwstk.s19701.main.Main;
+import edu.pjwstk.s19701.model.pet.Pet;
 
 import javax.swing.*;
 
@@ -24,8 +25,10 @@ public class SearchForPet {
     public SearchForPet(){
         searchByChipButton.addActionListener(event -> {
             SearchByChipCotroller searchByChipCotroller = new SearchByChipCotroller();
+            Pet pet = searchByChipCotroller.findPetByChip(chipNumberTextField.getText());
 
-            if(searchByChipCotroller.findPetByChip(chipNumberTextField.getText()) != null){
+            if(pet != null){
+                JOptionPane.showMessageDialog(searchByChipButton, "Pet name is: "  + pet.getName());
                 JFrame frame = new JFrame("PetRecord");
                 frame.setContentPane(new PetRecord().mainPetRecord);
                 frame.setVisible(true);

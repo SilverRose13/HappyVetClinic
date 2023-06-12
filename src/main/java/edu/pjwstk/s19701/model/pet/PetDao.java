@@ -24,9 +24,9 @@ public class PetDao implements PetDaoInterface{
         CriteriaQuery<Pet> criteriaQuery = criteriaBuilder.createQuery(Pet.class);
         Root<Pet> from = criteriaQuery.from(Pet.class);
 
+        criteriaQuery.select(from).where(criteriaBuilder.like(from.get("chipNumber"), chipNumber));
 
-
-        Query<Pet> query = getOrOpenSession().createQuery(criteriaQuery.select(from).where(criteriaBuilder.equal(from.get("chipNumber"), chipNumber)));
+        Query<Pet> query = getOrOpenSession().createQuery(criteriaQuery);
         query.setMaxResults(1);
         List<Pet> result = query.getResultList();
 

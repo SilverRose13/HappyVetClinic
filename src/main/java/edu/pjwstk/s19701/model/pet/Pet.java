@@ -4,7 +4,7 @@ import edu.pjwstk.s19701.model.Visit;
 import edu.pjwstk.s19701.model.owner.Owner;
 import jakarta.persistence.*;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.Set;
 import java.util.UUID;
 
@@ -22,7 +22,7 @@ public class Pet {
     @Column(name = "name", nullable = false)
     private String name;
     @Column(name = "birthday")
-    private LocalDateTime birthday;
+    private LocalDate birthday;
 
     @OneToMany
     @JoinColumn(name = "visit_id")
@@ -46,10 +46,10 @@ public class Pet {
         this.name = name;
     }
 
-    public LocalDateTime getBirthday() {
+    public LocalDate getBirthday() {
         return birthday;
     }
-    public void setBirthday(LocalDateTime birthday) {
+    public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
     }
 
