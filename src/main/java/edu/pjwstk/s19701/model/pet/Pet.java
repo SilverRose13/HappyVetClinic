@@ -1,5 +1,6 @@
-package edu.pjwstk.s19701.model;
+package edu.pjwstk.s19701.model.pet;
 
+import edu.pjwstk.s19701.model.Visit;
 import edu.pjwstk.s19701.model.owner.Owner;
 import jakarta.persistence.*;
 
@@ -14,6 +15,10 @@ public class Pet {
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "id", nullable = false)
     private UUID id;
+
+    @Column(name = "chipNumber")
+    private String chipNumber;
+
     @Column(name = "name", nullable = false)
     private String name;
     @Column(name = "birthday")
@@ -48,5 +53,27 @@ public class Pet {
         this.birthday = birthday;
     }
 
+    public String getChipNumber() {
+        return chipNumber;
+    }
 
+    public void setChipNumber(String chipNumber) {
+        this.chipNumber = chipNumber;
+    }
+
+    public Set<Visit> getVisits() {
+        return visits;
+    }
+
+    public void setVisits(Set<Visit> visits) {
+        this.visits = visits;
+    }
+
+    public Owner getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Owner owner) {
+        this.owner = owner;
+    }
 }

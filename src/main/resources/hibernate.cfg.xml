@@ -34,7 +34,7 @@
         <mapping class="edu.pjwstk.s19701.model.Condition" />
         <mapping class="edu.pjwstk.s19701.model.Diseases" />
         <mapping class="edu.pjwstk.s19701.model.JobTitle" />
-        <mapping class="edu.pjwstk.s19701.model.Pet" />
+        <mapping class="edu.pjwstk.s19701.model.pet.Pet" />
         <mapping class="edu.pjwstk.s19701.model.Visit" />
     </session-factory>
 </hibernate-configuration>
