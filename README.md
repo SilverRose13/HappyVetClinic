@@ -1,21 +1,24 @@
 Initial version for Happy Vet Clinic
 
-@TODO
-- verify persistence (if h2 is okay)
-   - nope, hibernate mappings failing for particular classes :c 
-- create UI
-   - initial flow on Login is done 
-   - 
-- finish ReadMe explanations
+### HOW TO RUN
+Run Main class and use default users to test functionality:
+VET/admin
+Owner/owner
+
+### TODO
 - add java docs
 - add comments
-- create diagrams
-- validate sonarlint findings
+- generate diagrams from the code
+- fix sonarlint findings
 
+### DB
 As a backend is used H2 database (in memory).
 
     Link to h2 console:
         http://www.h2database.com/html/download.html
+Each start of the application create database instance and push to it sample data-set.
+
+### JAVA 
     Temurin JDK 17
         https://adoptium.net/installation/
 ###
@@ -24,17 +27,14 @@ As a backend is used H2 database (in memory).
 > openjdk 17.0.7 2023-04-18
 
 > OpenJDK Runtime Environment Temurin-17.0.7+7 (build 17.0.7+7)
-###
 
-Each start of the application create database instance and push to it sample data-set.
+### Notes 
 
 Presented project contains example for:
 
-1. Classes, attributes
-//https://www.javatpoint.com/attributes-in-dbms
+1. [Classes, attributes](https://www.javatpoint.com/attributes-in-dbms)
     - Persistence class: @DataManager
     - Complex attribute: Employee and Clinic
-      - /* For example, if a person has more than one office and each office has an address made from a street number and city. So the address is a composite attribute, and offices are multi valued attributes, So combing them is called complex attributes. */
     - Optional attribute: Skipped
     - Multi-valued attribute: @Diseases in Diagnosis
     - Class attribute: APPLICATION_NAME in @Main class.
@@ -46,30 +46,28 @@ Presented project contains example for:
 
 2. Associations
 Designed project contains example of below associations:
-    - Binary: Pet - Visit (?) // https://vertabelo.com/blog/n-ary-relationship-types/
-    - With attribute: Employee - specialisation // https://bellekens.com/2011/08/10/uml-best-practice-attribute-or-association/
-    - Qualified: Diagnosis - Visit // https://www.informit.com/articles/article.aspx?p=1398623&seqNum=16
-    - Composition: Condition - Diagnosis (Condition description is integral part of Diagnosis) //https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-aggregation-vs-composition/
+    - [Binary](https://vertabelo.com/blog/n-ary-relationship-types/): Pet - Visit  
+    - [With attribute](https://bellekens.com/2011/08/10/uml-best-practice-attribute-or-association/): Employee - specialisation
+    - [Qualified](https://www.informit.com/articles/article.aspx?p=1398623&seqNum=16): Diagnosis - Visit 
+    - [Composition](https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-aggregation-vs-composition/): Condition - Diagnosis (Condition description is integral part of Diagnosis)
 
 3. Inheritance
-    - Disjoint (@TODO)
+    - Disjoint (skipped)
     - Abstract @Person (@User) is an abstract for an @Owner and @Employee
-    - Polymorphic Person -> employee, owner. (tutaj stworzyc metode w PErson ktora bedzie inaczej printowala u Employee, a inaczej u Ownera)
-    - Overlapping (@TODO) does not contain yet example?)
-    - Multi-aspect // java does not support it // https://www.geeksforgeeks.org/java-and-multiple-inheritance/
-    - Dynamic // java does not support dynamic inheritance. In java such use-cases are realized by composition and delegation strategy.
-    // https://stackoverflow.com/questions/36685181/dynamic-inheritance-in-java
+    - Polymorphic Person -> employee, owner. 
+    - Overlapping  setUsername() and setUsername(String) in Employee class
+    - [Multi-aspect](https://www.geeksforgeeks.org/java-and-multiple-inheritance/) // java does not support it // 
+    - [Dynamic](https://stackoverflow.com/questions/36685181/dynamic-inheritance-in-java) // java does not support dynamic inheritance. In java such use-cases are realized by composition and delegation strategy.
 
 4. Constraints
-    - Attributes @TODO
+   http://users.pja.edu.pl/~mtrzaska/Files/MAS/MAS-08-en.pdf
     - Unique: username in @User must be unique
-    - Subset @TODO
-    - Ordered @TODO
-    - Bag @TODO
-    - Xor @TODO
+    - Subset: Employee and Owner is a subset of Person
+    - Ordered skipped
+    - Bag: Diagnosis contains condition
+    - Xor: skipped
 
 5. Relation model
     - 1:*  Clinic - Employee (One clinic can have many employees
        - Owner - pet (One owner, can have many pets)
-    - many:many Visit - Condition (Many conditions can be diagnosed during one visit,
-        but  the same condition can be diagnosed during multiple visits) (@TODO)
+    - many:many Employee - Appointment

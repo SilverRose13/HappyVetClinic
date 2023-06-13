@@ -13,6 +13,4 @@ public class Diagnosis {
     @Id
     private UUID diagnosisId;
 
-
-
 }
