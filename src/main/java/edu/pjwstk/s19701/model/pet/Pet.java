@@ -10,6 +10,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "Pet")
+@SuppressWarnings("unused")
 public class Pet {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

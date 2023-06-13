@@ -9,6 +9,7 @@ import jakarta.persistence.MappedSuperclass;
 import java.util.UUID;
 
 @MappedSuperclass
+@SuppressWarnings("unused")
 public class  Person {
 
     @GeneratedValue(strategy = GenerationType.UUID)
