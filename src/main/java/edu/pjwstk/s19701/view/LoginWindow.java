@@ -22,7 +22,7 @@ public class LoginWindow extends JFrame {
             LoginController loginController = new LoginController();
 
             if(loginController.loginEmployee(usernameField.getText(), String.valueOf(passwordField.getPassword()))) {
-                JFrame frame = new JFrame("SearchForPet");
+                JFrame frame = new JFrame(Main.APPLICATION_NAME);
                 frame.setContentPane(new SearchForPet().mainSearchForPet);
                 frame.setVisible(true);
 
