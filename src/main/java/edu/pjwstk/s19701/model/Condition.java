@@ -12,9 +12,10 @@ public class Condition {
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "id", nullable = false)
     private UUID id;
-    private Diseases diseases;
     @Column(name = "symptoms", nullable = false)
     private String symptoms;
+    @Column
+    private Diseases disease;
 
     public UUID getId() {
         return id;
@@ -29,10 +30,10 @@ public class Condition {
     }
 
     public Diseases getDiseases() {
-        return diseases;
+        return disease;
     }
 
-    public void setDiseases(Diseases diseases) {
-        this.diseases = diseases;
+    public void setDiseases(Diseases disease) {
+        this.disease = disease;
     }
 }

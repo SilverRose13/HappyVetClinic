@@ -1,8 +1,7 @@
 package edu.pjwstk.s19701.controller;
 
-import edu.pjwstk.s19701.model.Clinic;
+import edu.pjwstk.s19701.model.*;
 import edu.pjwstk.s19701.model.employee.Employee;
-import edu.pjwstk.s19701.model.JobTitle;
 import edu.pjwstk.s19701.model.owner.Owner;
 import edu.pjwstk.s19701.model.pet.Pet;
 import org.hibernate.HibernateException;
@@ -25,6 +24,8 @@ public class DataManager {
         createEmployee(clinic);
         createOwner();
         createPet();
+        createVisit();
+        createCondition();
     }
 
     private Clinic createClinic() {
@@ -65,6 +66,20 @@ public class DataManager {
         pet.setBirthday(LocalDate.of(2020, 12, 12));
 
         save(pet);
+    }
+
+    private void createCondition() {
+        Condition condition = new Condition();
+
+        condition.setDiseases(Diseases.ANTHRAX);
+        condition.setSymptoms("high fever, blood around nose and mouth");
+    }
+
+    private void createVisit() {
+        Visit visit = new Visit();
+
+        visit.setDateTime(LocalDateTime.now());
+
     }
 
     public static void save(Object o){
