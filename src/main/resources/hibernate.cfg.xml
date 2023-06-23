@@ -26,15 +26,15 @@
         <property name="hibernate.dbcp.maxWaitMillis">-1</property>
 
         <!-- mappings -->
-        <mapping class="edu.pjwstk.s19701.model.person.Person" />
-        <mapping class="edu.pjwstk.s19701.model.employee.Employee" />
-        <mapping class="edu.pjwstk.s19701.model.owner.Owner" />
-        <mapping class="edu.pjwstk.s19701.model.Clinic" />
-        <mapping class="edu.pjwstk.s19701.model.Diagnosis" /> <!-- no error but does  it need to be given attributes of foreign keys? -->
-        <mapping class="edu.pjwstk.s19701.model.Condition" />
-        <mapping class="edu.pjwstk.s19701.model.Diseases" />
-        <mapping class="edu.pjwstk.s19701.model.JobTitle" />
-        <mapping class="edu.pjwstk.s19701.model.pet.Pet" />
-        <mapping class="edu.pjwstk.s19701.model.Visit" />
+        <mapping class="edu.pjatk.s19701.model.person.Person" />
+        <mapping class="edu.pjatk.s19701.model.employee.Employee" />
+        <mapping class="edu.pjatk.s19701.model.owner.Owner" />
+        <mapping class="edu.pjatk.s19701.model.Clinic" />
+        <mapping class="edu.pjatk.s19701.model.Diagnosis" /> <!-- no error but does  it need to be given attributes of foreign keys? -->
+        <mapping class="edu.pjatk.s19701.model.Condition" />
+        <mapping class="edu.pjatk.s19701.model.Diseases" />
+        <mapping class="edu.pjatk.s19701.model.JobTitle" />
+        <mapping class="edu.pjatk.s19701.model.pet.Pet" />
+        <mapping class="edu.pjatk.s19701.model.Visit" />
     </session-factory>
 </hibernate-configuration>

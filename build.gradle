@@ -2,7 +2,7 @@ plugins {
     id("java")
 }
 
-group = "edu.pjwstk.s19701"
+group = "edu.pjatk.s19701"
 version = "0.1"
 
 repositories {
