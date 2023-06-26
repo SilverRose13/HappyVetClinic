@@ -2,9 +2,7 @@ package edu.pjatk.s19701.model;
 
 import jakarta.persistence.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @Entity
 @Table(name = "Condition")
@@ -17,7 +15,15 @@ public class Condition {
     @Column(name = "symptoms", nullable = false)
     private String symptoms;
     @Column
-    private ArrayList<Disease> diseases = new ArrayList<>();
+    private List<Disease> diseases = new ArrayList<>();
+
+    @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @JoinTable(
+            name = "diagnosis",
+            joinColumns = @JoinColumn(name = "condition_id"),
+            inverseJoinColumns = @JoinColumn(name = "visit_id")
+    )
+    private Set<Visit> visits = new HashSet<>();
 
     public UUID getId() {
         return id;
@@ -37,5 +43,17 @@ public class Condition {
 
     public void setDiseases(Disease diseases) {
         this.diseases.add(diseases);
+    }
+
+    public void setDiseases(List<Disease> diseases) {
+        this.diseases = diseases;
+    }
+
+    public Set<Visit> getVisits() {
+        return visits;
+    }
+
+    public void setVisits(Set<Visit> visits) {
+        this.visits = visits;
     }
 }

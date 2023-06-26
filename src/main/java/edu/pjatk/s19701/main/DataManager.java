@@ -29,6 +29,7 @@ public class DataManager {
     private Clinic createClinic() {
         Clinic clinic = new Clinic();
         clinic.setAddress("Address");
+
         HibernateSessionFactory.save(clinic);
 
         return clinic;
@@ -70,6 +71,7 @@ public class DataManager {
         Condition condition = new Condition();
         condition.setDiseases(Disease.ANTHRAX);
         condition.setSymptoms("high fever, blood around nose and mouth");
+
         HibernateSessionFactory.save(condition);
     }
 
@@ -78,8 +80,8 @@ public class DataManager {
         Condition condition = new Condition();
         condition.setDiseases(Disease.OTHER);
         condition.setSymptoms("Looks bad");
-        visit.setConditions(List.of(condition));
         visit.setDateTime(LocalDateTime.now().minusMonths(1));
+
         HibernateSessionFactory.save(visit);
     }
 

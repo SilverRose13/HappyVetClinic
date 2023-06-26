@@ -5,7 +5,9 @@ import edu.pjatk.s19701.model.employee.Employee;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 @Entity
@@ -28,13 +30,9 @@ public class Visit {
     @JoinColumn(name = "id_pet")
     private Pet pet;
 
-    @ManyToMany(cascade = {CascadeType.ALL})
-//    @JoinTable(
-//            name = "Diagnosis",
-//            joinColumns = @JoinColumn(name = "id_visit")
-////            inverseJoinColumns = @JoinColumn(name = "id_condition")
-//    )
-    private List<Condition> conditions;
+    @ManyToMany(mappedBy = "diagnosis")
+    private Set<Condition> conditions = new HashSet<>();
+
 
     public UUID getId() {
         return id;
@@ -68,11 +66,11 @@ public class Visit {
         this.pet = pet;
     }
 
-    public List<Condition> getConditions() {
+    public Set<Condition> getConditions() {
         return conditions;
     }
 
-    public void setConditions(List<Condition> conditions) {
+    public void setConditions(Set<Condition> conditions) {
         this.conditions = conditions;
     }
 }
