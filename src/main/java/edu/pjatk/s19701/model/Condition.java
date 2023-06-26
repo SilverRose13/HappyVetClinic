@@ -17,7 +17,7 @@ public class Condition {
     @Column(name = "symptoms", nullable = false)
     private String symptoms;
     @Column
-    private ArrayList<Disease> diseases;
+    private ArrayList<Disease> diseases = new ArrayList<>();
 
     public UUID getId() {
         return id;
