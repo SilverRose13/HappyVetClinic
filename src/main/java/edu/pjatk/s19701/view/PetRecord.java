@@ -28,7 +28,7 @@ public class PetRecord {
         PatientName.setValue(pet.getName());
         Breed.setValue(pet.getBreed());
         Age.setValue(pet.getAge());
-        OwnersName.setValue(pet.getOwner().getName());
+        //OwnersName.setValue(pet.getOwner().getName());
 
     }
 
