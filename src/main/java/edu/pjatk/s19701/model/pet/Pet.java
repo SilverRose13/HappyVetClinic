@@ -5,6 +5,7 @@ import edu.pjatk.s19701.model.owner.Owner;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.Set;
 import java.util.UUID;
 
@@ -24,6 +25,9 @@ public class Pet {
     private String name;
     @Column(name = "birthday")
     private LocalDate birthday;
+
+    @Column(name = "breed")
+    private String breed;
 
     @OneToMany
     @JoinColumn(name = "visit_id")
@@ -76,5 +80,26 @@ public class Pet {
 
     public void setOwner(Owner owner) {
         this.owner = owner;
+    }
+
+    public String getBreed() {
+        return breed;
+    }
+
+    public void setBreed(String breed) {
+        this.breed = breed;
+    }
+
+    //method for getting the age of a Pet from their birthday
+    public int getAge(){
+
+        LocalDate currentDate = LocalDate.now();
+
+        if(Period.between(birthday, currentDate).getYears() > 0){
+            return Period.between(birthday, currentDate).getYears();
+        } else {
+            return Period.between(birthday, currentDate).getMonths();
+        }
+
     }
 }

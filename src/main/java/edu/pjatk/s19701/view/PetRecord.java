@@ -17,9 +17,19 @@ public class PetRecord {
     private JPanel SaveAndAddVisitButtons;
     private JLabel AppName;
     private JPanel MedicalInformation;
+    private JFormattedTextField PatientName;
+    private JFormattedTextField Breed;
+    private JFormattedTextField OwnersName;
+    private JFormattedTextField Age;
 
     public PetRecord(Pet pet){
         this.pet = pet;
+
+        PatientName.setValue(pet.getName());
+        Breed.setValue(pet.getBreed());
+        Age.setValue(pet.getAge());
+        OwnersName.setValue(pet.getOwner().getName());
+
     }
 
     public PetRecord(){
