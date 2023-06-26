@@ -42,7 +42,6 @@ Presented project contains example for:
     - Override: setName in Employee class (adding logging on set method)
     - Overload: setUsername(), and setUsername(String). First method will generate random uuid as username, the second one with the String will user username accordingly to given username
 
-
 2. Associations
 Designed project contains example of below associations:
     - [Binary](https://vertabelo.com/blog/n-ary-relationship-types/): Pet - Visit  
@@ -85,8 +84,8 @@ Designed project contains example of below associations:
 >     - GUI implementation, which only creates connections between objects and does not allow for the above interaction, is not enough to pass the project. 
 >       - Similarly, solutions e.g. with a single widget, a TextBox, target cardinality “1” or just filtering the extent (instead of using a previously defined association) are insufficient.
 > - [ ] The implementation must contain **sample data** showing the correct operation.
-> - [ ] Pay attention to the **quality and ergonomics of the GUI** (eg. window scaling, color scheme, operation philosophy) - this is an important component of the final evaluation. The design and implementation of the GUI (you can use dedicated editors) should be in line with the usability guidelines provided in the lecture.
-> - [ ] All data (not only utilized in the UC) stored in the system, has to be **persisted** (eg. a file, database, dedicated library, etc.).
+> - [ ] Pay attention to the **quality and ergonomics of the GUI** (e.g. window scaling, color scheme, operation philosophy) - this is an important component of the final evaluation. The design and implementation of the GUI (you can use dedicated editors) should be in line with the usability guidelines provided in the lecture.
+> - [ ] All data (not only utilized in the UC) stored in the system, has to be **persisted** (e.g. a file, database, dedicated library, etc.).
 > #####
 > - Each project will be individually defended on **30/06/2023** 
 >   - During the process you can expect detailed questions about 
@@ -101,8 +100,8 @@ Designed project contains example of below associations:
 | Difficulty of the requirements                                      | 10             |
 | Scope and correctness of the implemented functionality              | 15             |
 | Scope and correctness of the implemented object-oriented structures | 25             |
-| Code quality (names, comments, JavaDoc, etc.) | 5              |
+| Code quality (names, comments, JavaDoc, etc.)                       | 5              |
 | Elegance of the implemented solutions                               | 15             |
-| Persistency                                                         | 	10            |                             
+| Persistency                                                         | 10             |
 | GUI implementation (including usability)                            | 20             |
 | Total                                                               | 100            |
