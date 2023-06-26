@@ -30,7 +30,7 @@ public class SearchForPet {
             if(pet != null){
                 JOptionPane.showMessageDialog(searchByChipButton, "Pet name is: "  + pet.getName());
                 JFrame frame = new JFrame("PetRecord");
-                frame.setContentPane(new PetRecord().mainPetRecord);
+                frame.setContentPane(new PetRecord(pet).mainPetRecord);
                 frame.setVisible(true);
 
                 frame.setSize(Main.INIT_WIDTH, Main.INIT_HEIGHT);

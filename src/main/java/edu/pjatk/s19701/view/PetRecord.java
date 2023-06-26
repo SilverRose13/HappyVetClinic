@@ -1,9 +1,11 @@
 package edu.pjatk.s19701.view;
 
+import edu.pjatk.s19701.model.pet.Pet;
+
 import javax.swing.*;
 
 public class PetRecord {
-
+    private Pet pet;
     public JPanel mainPetRecord;
     private JList<JButton> patientInformation;
     private JButton searchButton;
@@ -15,6 +17,14 @@ public class PetRecord {
     private JPanel SaveAndAddVisitButtons;
     private JLabel AppName;
     private JPanel MedicalInformation;
+
+    public PetRecord(Pet pet){
+        this.pet = pet;
+    }
+
+    public PetRecord(){
+
+    }
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("PetRecord");
