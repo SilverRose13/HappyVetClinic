@@ -10,6 +10,11 @@ public class PetRecord {
     private JButton addVisitButton;
     private JButton backButton;
     private JComboBox comboBox1;
+    private JPanel PatientInformatioJPanel;
+    private JPanel SearchForVisit;
+    private JPanel SaveAndAddVisitButtons;
+    private JLabel AppName;
+    private JPanel MedicalInformation;
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("PetRecord");
