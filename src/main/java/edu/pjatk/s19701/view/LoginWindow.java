@@ -16,17 +16,19 @@ public class LoginWindow extends JFrame {
     JLabel passwordLabel;
     JLabel usernameLabel;
     JPasswordField passwordField;
+    static JFrame searchFrame = new JFrame(Main.APPLICATION_NAME);
+
 
     public LoginWindow() {
+
         loginButton.addActionListener(event -> {
             LoginController loginController = new LoginController();
 
             if(loginController.loginEmployee(usernameField.getText(), String.valueOf(passwordField.getPassword()))) {
-                JFrame frame = new JFrame(Main.APPLICATION_NAME);
-                frame.setContentPane(new SearchForPet().mainSearchForPet);
-                frame.setVisible(true);
-
-                frame.setSize(Main.INIT_WIDTH, Main.INIT_HEIGHT);
+                searchFrame.setContentPane(new Search().mainSearchForPet);
+                searchFrame.setVisible(true);
+                searchFrame.setSize(Main.INIT_WIDTH, Main.INIT_HEIGHT);
+                searchFrame.setIconImage(Main.frame.getIconImage());
                 Main.frame.dispose();
                 return;
             }
@@ -44,4 +46,5 @@ public class LoginWindow extends JFrame {
     public JPanel getMainPanel() {
         return mainPanel;
     }
+
 }
