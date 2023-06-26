@@ -68,7 +68,7 @@ public class DataManager {
 
     private void createCondition() {
         Condition condition = new Condition();
-        condition.setDiseases(Diseases.ANTHRAX);
+        condition.setDiseases(Disease.ANTHRAX);
         condition.setSymptoms("high fever, blood around nose and mouth");
         HibernateSessionFactory.save(condition);
     }
@@ -76,7 +76,7 @@ public class DataManager {
     private void createVisit() {
         Visit visit = new Visit();
         Condition condition = new Condition();
-        condition.setDiseases(Diseases.OTHER);
+        condition.setDiseases(Disease.OTHER);
         condition.setSymptoms("Looks bad");
         visit.setConditions(List.of(condition));
         visit.setDateTime(LocalDateTime.now().minusMonths(1));

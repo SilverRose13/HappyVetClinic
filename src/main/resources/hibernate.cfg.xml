@@ -32,7 +32,7 @@
         <mapping class="edu.pjatk.s19701.model.Clinic" />
         <mapping class="edu.pjatk.s19701.model.Diagnosis" /> <!-- no error but does  it need to be given attributes of foreign keys? -->
         <mapping class="edu.pjatk.s19701.model.Condition" />
-        <mapping class="edu.pjatk.s19701.model.Diseases" />
+        <mapping class="edu.pjatk.s19701.model.Disease" />
         <mapping class="edu.pjatk.s19701.model.JobTitle" />
         <mapping class="edu.pjatk.s19701.model.pet.Pet" />
         <mapping class="edu.pjatk.s19701.model.Visit" />

@@ -2,6 +2,8 @@ package edu.pjatk.s19701.model;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -15,7 +17,7 @@ public class Condition {
     @Column(name = "symptoms", nullable = false)
     private String symptoms;
     @Column
-    private Diseases disease;
+    private ArrayList<Disease> diseases;
 
     public UUID getId() {
         return id;
@@ -29,13 +31,11 @@ public class Condition {
         this.symptoms = symptoms;
     }
 
-    public Diseases getDiseases() {
-        return disease;
+    public List<Disease> getDiseases() {
+        return diseases;
     }
 
-    //@TODO setPlural like Diseases, doet not match to what this method do, as it accept only single object (not a list)
-
-    public void setDiseases(Diseases disease) {
-        this.disease = disease;
+    public void setDiseases(Disease diseases) {
+        this.diseases.add(diseases);
     }
 }
