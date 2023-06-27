@@ -73,4 +73,8 @@ public class Visit {
     public void setConditions(Set<Condition> conditions) {
         this.conditions = conditions;
     }
+
+    public void addCondition(Condition condition){
+        conditions.add(condition);
+    }
 }
