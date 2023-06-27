@@ -1,8 +1,11 @@
 package edu.pjatk.s19701.view;
 
+import edu.pjatk.s19701.main.Main;
 import edu.pjatk.s19701.model.pet.Pet;
 
 import javax.swing.*;
+
+import static edu.pjatk.s19701.view.Search.searchFrame;
 
 public class PetRecord {
     private Pet pet;
@@ -21,26 +24,31 @@ public class PetRecord {
     private JFormattedTextField Breed;
     private JFormattedTextField OwnersName;
     private JFormattedTextField Age;
+    static JFrame petRecordFrame = new JFrame(Main.APPLICATION_NAME);
 
     public PetRecord(Pet pet){
+        searchFrame.dispose();
+
         this.pet = pet;
 
         PatientName.setValue(pet.getName());
         Breed.setValue(pet.getBreed());
         Age.setValue(pet.getAge());
-        //OwnersName.setValue(pet.getOwner().getName());
 
-    }
-
-    public PetRecord(){
-
+        backButton.addActionListener(event -> {
+            searchFrame.setContentPane(new Search().mainSearchForPet);
+            searchFrame.setVisible(true);
+            searchFrame.setSize(Main.INIT_WIDTH, Main.INIT_HEIGHT);
+            searchFrame.setIconImage(Main.frame.getIconImage());
+            Search.freshPetRecordFrame.dispose();
+        });
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("PetRecord");
-        frame.setContentPane(new PetRecord().mainPetRecord);
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
+        JPanel petRecordPanel = new PetRecord(new Pet()).mainPetRecord;
+        petRecordFrame.setContentPane(petRecordPanel);
+        petRecordFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        petRecordFrame.pack();
+        petRecordFrame.setVisible(true);
     }
 }

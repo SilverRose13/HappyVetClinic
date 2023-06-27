@@ -6,7 +6,9 @@ import edu.pjatk.s19701.main.Main;
 
 import javax.swing.*;
 
-public class SearchForPet {
+import static edu.pjatk.s19701.view.PetRecord.petRecordFrame;
+
+public class Search {
     private JButton searchByChipButton;
     private JTextField nameTextField;
     private JTextField surnameTextField;
@@ -21,35 +23,37 @@ public class SearchForPet {
     private JPanel SearchByChipPanel;
     private JPanel SearchByOwner;
     private JPanel searchByOwnerPanel;
+    public static JFrame searchFrame = new JFrame("Search");
+    static JFrame freshPetRecordFrame = new JFrame(Main.APPLICATION_NAME);
 
-    public SearchForPet(){
+    public Search(){
+        petRecordFrame.dispose();
+
+//        PetRecord.petRecordFrame.dispose();
         searchByChipButton.addActionListener(event -> {
             SearchByChipController searchByChipController = new SearchByChipController();
             Pet pet = searchByChipController.findPetByChip(chipNumberTextField.getText());
 
             if(pet != null){
-                JOptionPane.showMessageDialog(searchByChipButton, "Pet name is: "  + pet.getName());
-                JFrame frame = new JFrame("PetRecord");
-                frame.setContentPane(new PetRecord(pet).mainPetRecord);
-                frame.setVisible(true);
-
-                frame.setSize(Main.INIT_WIDTH, Main.INIT_HEIGHT);
-                Main.frame.dispose();
+                freshPetRecordFrame.setContentPane(new PetRecord(pet).mainPetRecord);
+                freshPetRecordFrame.setVisible(true);
+                freshPetRecordFrame.setSize(Main.INIT_WIDTH, Main.INIT_HEIGHT);
+                freshPetRecordFrame.setIconImage(Main.frame.getIconImage());
+                LoginWindow.searchFrame.dispose();
                 return;
             }
 
             JOptionPane.showMessageDialog(searchByChipButton, "Chip number not found");
-
         });
-
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("SearchForPet");
-        frame.setContentPane(new SearchForPet().mainSearchForPet);
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
+        JPanel searchJPanel = new Search().mainSearchForPet;
+        searchFrame.setContentPane(searchJPanel);
+        searchFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        searchFrame.pack();
+        searchFrame.setVisible(true);
+        petRecordFrame.dispose();
     }
 
 }
