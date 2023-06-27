@@ -5,10 +5,7 @@ import edu.pjatk.s19701.model.employee.Employee;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 
 @Entity
 @Table(name = "Visit")
@@ -30,9 +27,9 @@ public class Visit {
     @JoinColumn(name = "id_pet")
     private Pet pet;
 
-    @ManyToMany(mappedBy = "diagnosis")
-    private Set<Condition> conditions = new HashSet<>();
-
+    @ManyToMany(cascade = CascadeType.PERSIST, mappedBy = "visits")
+//    @JoinTable(name = "diagnosis")
+    public Set<Condition> conditions;
 
     public UUID getId() {
         return id;
@@ -74,7 +71,15 @@ public class Visit {
         this.conditions = conditions;
     }
 
-    public void addCondition(Condition condition){
-        conditions.add(condition);
+
+    @Override
+    public String toString() {
+        return "Visit{" +
+                "id=" + id +
+                ", employee=" + employee +
+                ", dateTime=" + dateTime +
+                ", pet=" + pet +
+                ", conditions=" + conditions +
+                '}';
     }
 }

@@ -1,10 +1,11 @@
-package edu.pjwstk.s19701.model;
+package edu.pjatk.s19701.model;
 
 import jakarta.persistence.*;
 
 import java.util.UUID;
 
 @Entity
+@Table(name = "Diagnosis")
 public class Diagnosis {
 
     @Id
@@ -17,9 +18,5 @@ public class Diagnosis {
     public void setId(UUID id) {
         this.id = id;
     }
-
-
-
-
 
 }

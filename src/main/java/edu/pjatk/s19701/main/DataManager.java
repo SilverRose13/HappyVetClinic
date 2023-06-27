@@ -1,13 +1,17 @@
 package edu.pjatk.s19701.main;
 
 import edu.pjatk.s19701.model.*;
-import edu.pjatk.s19701.model.pet.Pet;
 import edu.pjatk.s19701.model.employee.Employee;
 import edu.pjatk.s19701.model.owner.Owner;
+import edu.pjatk.s19701.model.pet.Pet;
+import org.hibernate.Session;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
+import java.util.UUID;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
@@ -17,38 +21,14 @@ public class DataManager {
 
     static Logger logger = Logger.getLogger(DataManager.class.getName());
 
-    public void initDataSet(){
+    public void initDataSet() {
         Clinic clinic = createClinic();
-        Employee employee = createEmployee(clinic);
-
         Owner owner = createOwner();
-        Pet pet = createPet();
-
-        Visit visit = createVisit();
+        Pet pet = createPet(owner);
         Condition condition = createCondition();
-
-
-
-        createRelations(owner,condition, visit, pet, employee);
-    }
-
-    private void createRelations(Owner owner, Condition condition,
-                                 Visit visit, Pet pet,
-                                 Employee employee) {
-        pet.setOwner(owner);
-        pet.addVisits(visit);
-
-        visit.addCondition(condition);
-        visit.setPet(pet);
-        visit.setEmployee(employee);
-
-        condition.addVisit(visit);
-
-        HibernateSessionFactory.save(owner);
-        HibernateSessionFactory.save(condition);
-        HibernateSessionFactory.save(visit);
-        HibernateSessionFactory.save(pet);
-        HibernateSessionFactory.save(employee);
+        Employee employee = createEmployee(clinic);
+        Visit visit = createVisit(pet, employee, condition);
+        logger.log(Level.INFO, "Registered visit: {0}", visit);
     }
 
     private Clinic createClinic() {
@@ -83,12 +63,12 @@ public class DataManager {
         return owner;
     }
 
-    private static Pet createPet(){
+    private static Pet createPet(Owner owner) {
         Pet pet = new Pet();
-
         pet.setChipNumber("9876543210");
         pet.setName("Zazu");
         pet.setBirthday(LocalDate.of(2020, 12, 12));
+        pet.setOwner(owner);
 
         HibernateSessionFactory.save(pet);
         return pet;
@@ -96,21 +76,24 @@ public class DataManager {
 
     private Condition createCondition() {
         Condition condition = new Condition();
-        condition.setDiseases(Disease.ANTHRAX);
+        condition.setDiseases(List.of(Disease.ANTHRAX));
         condition.setSymptoms("high fever, blood around nose and mouth");
 
         HibernateSessionFactory.save(condition);
         return condition;
     }
 
-    private Visit createVisit() {
+    private Visit createVisit(Pet pet, Employee employee, Condition condition) {
         Visit visit = new Visit();
-        Condition condition = new Condition();
-        condition.setDiseases(Disease.OTHER);
-        condition.setSymptoms("Looks bad");
         visit.setDateTime(LocalDateTime.now().minusMonths(1));
-
+        visit.setPet(pet);
+        visit.setEmployee(employee);
+        Condition sampleCondition = new Condition();
+        sampleCondition.setSymptoms("tmp");
+        sampleCondition.setDiseases(List.of(Disease.AFLATOXICOSIS));
+        visit.setConditions(Set.of(sampleCondition));
         HibernateSessionFactory.save(visit);
+
         return visit;
     }
 

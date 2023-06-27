@@ -10,18 +10,18 @@ public class Condition {
 
     @Id
     @GeneratedValue
-    @Column(columnDefinition = "uuid", updatable = false)
+    @Column( columnDefinition = "uuid", updatable = false )
     private UUID id;
     @Column(name = "symptoms", nullable = false)
     private String symptoms;
+
     @Column
     private List<Disease> diseases = new ArrayList<>();
 
-    @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
-    @JoinTable(
-            name = "diagnosis",
-            joinColumns = @JoinColumn(name = "condition_id"),
-            inverseJoinColumns = @JoinColumn(name = "visit_id")
+    @ManyToMany(cascade = {CascadeType.PERSIST})
+    @JoinTable(name = "diagnosis",
+                        joinColumns = @JoinColumn(name="VISIT_ID", referencedColumnName = "ID"),
+            inverseJoinColumns = @JoinColumn(name = "CONDITION_ID", referencedColumnName = "ID")
     )
     private Set<Visit> visits = new HashSet<>();
 
@@ -41,10 +41,6 @@ public class Condition {
         return diseases;
     }
 
-    public void setDiseases(Disease diseases) {
-        this.diseases.add(diseases);
-    }
-
     public void setDiseases(List<Disease> diseases) {
         this.diseases = diseases;
     }
@@ -57,9 +53,13 @@ public class Condition {
         this.visits = visits;
     }
 
-    public void addVisit(Visit visit){
-        visits.add(visit);
+    @Override
+    public String toString() {
+        return "Condition{" +
+                "id=" + id +
+                ", symptoms='" + symptoms + '\'' +
+                ", diseases=" + diseases +
+                ", visits=" + visits +
+                '}';
     }
-
-
 }
