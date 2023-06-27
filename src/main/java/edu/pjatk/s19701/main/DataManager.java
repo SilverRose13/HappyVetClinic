@@ -19,11 +19,36 @@ public class DataManager {
 
     public void initDataSet(){
         Clinic clinic = createClinic();
-        createEmployee(clinic);
-        createOwner();
-        createPet();
-        createVisit();
-        createCondition();
+        Employee employee = createEmployee(clinic);
+
+        Owner owner = createOwner();
+        Pet pet = createPet();
+
+        Visit visit = createVisit();
+        Condition condition = createCondition();
+
+
+
+        createRelations(owner,condition, visit, pet, employee);
+    }
+
+    private void createRelations(Owner owner, Condition condition,
+                                 Visit visit, Pet pet,
+                                 Employee employee) {
+        pet.setOwner(owner);
+        pet.addVisits(visit);
+
+        visit.addCondition(condition);
+        visit.setPet(pet);
+        visit.setEmployee(employee);
+
+        condition.addVisit(visit);
+
+        HibernateSessionFactory.save(owner);
+        HibernateSessionFactory.save(condition);
+        HibernateSessionFactory.save(visit);
+        HibernateSessionFactory.save(pet);
+        HibernateSessionFactory.save(employee);
     }
 
     private Clinic createClinic() {
@@ -31,11 +56,10 @@ public class DataManager {
         clinic.setAddress("Address");
 
         HibernateSessionFactory.save(clinic);
-
         return clinic;
     }
 
-    private void createEmployee(Clinic clinic) {
+    private Employee createEmployee(Clinic clinic) {
         Employee employee = new Employee();
         employee.setName("EmployeeName");
         employee.setSurname("EmployeeSurname");
@@ -45,19 +69,21 @@ public class DataManager {
         employee.setClinic(clinic);
 
         HibernateSessionFactory.save(employee);
+        return employee;
     }
 
-    private static void createOwner() {
+    private static Owner createOwner() {
         Owner owner = new Owner();
-        owner.setName("Ownername");
+        owner.setName("OwnerName");
         owner.setSurname("OwnerSurname");
         owner.setPassword("owner");
         owner.setUsername("Owner");
 
         HibernateSessionFactory.save(owner);
+        return owner;
     }
 
-    private static void createPet(){
+    private static Pet createPet(){
         Pet pet = new Pet();
 
         pet.setChipNumber("9876543210");
@@ -65,17 +91,19 @@ public class DataManager {
         pet.setBirthday(LocalDate.of(2020, 12, 12));
 
         HibernateSessionFactory.save(pet);
+        return pet;
     }
 
-    private void createCondition() {
+    private Condition createCondition() {
         Condition condition = new Condition();
         condition.setDiseases(Disease.ANTHRAX);
         condition.setSymptoms("high fever, blood around nose and mouth");
 
         HibernateSessionFactory.save(condition);
+        return condition;
     }
 
-    private void createVisit() {
+    private Visit createVisit() {
         Visit visit = new Visit();
         Condition condition = new Condition();
         condition.setDiseases(Disease.OTHER);
@@ -83,6 +111,7 @@ public class DataManager {
         visit.setDateTime(LocalDateTime.now().minusMonths(1));
 
         HibernateSessionFactory.save(visit);
+        return visit;
     }
 
 

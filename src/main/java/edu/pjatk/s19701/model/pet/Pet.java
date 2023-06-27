@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
@@ -31,7 +32,7 @@ public class Pet {
 
     @OneToMany
     @JoinColumn(name = "visit_id")
-    private Set<Visit> visits;
+    private Set<Visit> visits = new HashSet<>();
 
     @ManyToOne
     @JoinColumn(name = "owner")
@@ -101,5 +102,9 @@ public class Pet {
             return Period.between(birthday, currentDate).getMonths();
         }
 
+    }
+
+    public void addVisits(Visit visit) {
+        visits.add(visit);
     }
 }
