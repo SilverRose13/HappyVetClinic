@@ -15,7 +15,7 @@ public class PetRecord {
     public JList<String> patientInformation;
     private JButton searchButton;
     private JButton addVisitButton;
-    private JButton backButton;
+    private BackButton backButton;
     private JComboBox comboBox1;
     private JPanel PatientInformatioJPanel;
     private JPanel SearchForVisit;
