@@ -29,6 +29,7 @@ public class PetRecord {
     private JFormattedTextField OwnersName;
     private JFormattedTextField Age;
     private JPanel BottomRow;
+    private JScrollPane MedicalHistory;
     static JFrame petRecordFrame = new JFrame(Main.APPLICATION_NAME);
 
     public PetRecord(Pet pet){
@@ -41,11 +42,18 @@ public class PetRecord {
         Set<Visit> visits = pet.getVisits();
         Iterator<Visit> visitsIterator = visits.iterator();
 
+        DefaultListModel listModel = new DefaultListModel<String>();
+
+
+
         while(visitsIterator.hasNext()){
             Visit i = visitsIterator.next();
-            patientInformation.add(new JButton(i.toString()));
+            listModel.addElement(i.toString());
         }
-        patientInformation.setVisible(true);
+
+        patientInformation = new JList<String>(listModel);
+
+
 
 
 

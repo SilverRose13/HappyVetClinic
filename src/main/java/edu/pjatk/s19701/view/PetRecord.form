@@ -32,7 +32,7 @@
           <title-color color="-14275015"/>
         </border>
         <children>
-          <scrollpane id="bb765">
+          <scrollpane id="bb765" binding="MedicalHistory">
             <constraints>
               <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -43,6 +43,7 @@
                 <constraints/>
                 <properties>
                   <doubleBuffered value="false"/>
+                  <dropMode value="ON"/>
                   <enabled value="true"/>
                   <font name="Courier New" size="14" style="0"/>
                   <selectedIndex value="-1"/>
@@ -136,7 +137,7 @@
               </grid>
             </constraints>
             <properties>
-              <background color="-14275015"/>
+              <background color="-4201499"/>
               <caretColor color="-4201499"/>
               <font name="Courier New" size="14" style="0"/>
               <foreground color="-14275015"/>
