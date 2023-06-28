@@ -24,8 +24,11 @@ public class DataManager {
         Pet pet = createPet(owner);
         createCondition();
         Employee employee = createEmployee(clinic);
-        Visit visit = createVisit(pet, employee);
+        Visit visit = createVisit(pet, employee, 1, Disease.AFLATOXICOSIS);
         logger.log(Level.INFO, "Registered visit: {0}", visit);
+
+        Visit earlierVisit = createVisit(pet, employee, 2, Disease.ANTHRAX);
+        logger.log(Level.INFO, "Registered visit: {0}", earlierVisit);
     }
 
     private Clinic createClinic() {
@@ -79,15 +82,15 @@ public class DataManager {
         HibernateSessionFactory.save(condition);
     }
 
-    private Visit createVisit(Pet pet, Employee employee) {
+    private Visit createVisit(Pet pet, Employee employee, int monthsAgo, Disease disease) {
         Visit visit = new Visit();
-        visit.setDateTime(LocalDateTime.now().minusMonths(1));
+        visit.setDateTime(LocalDateTime.now().minusMonths(monthsAgo));
         visit.setPet(pet);
         visit.setEmployee(employee);
 
         Condition sampleCondition = new Condition();
         sampleCondition.setSymptoms("Sample symptom");
-        sampleCondition.setDiseases(List.of(Disease.AFLATOXICOSIS));
+        sampleCondition.setDiseases(List.of(disease));
         sampleCondition.getVisits().add(visit);
         visit.getConditions().add(sampleCondition);
 

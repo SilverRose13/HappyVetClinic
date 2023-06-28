@@ -5,8 +5,7 @@ import edu.pjatk.s19701.model.Visit;
 import edu.pjatk.s19701.model.pet.Pet;
 
 import javax.swing.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.*;
 import java.util.List;
 
 import static edu.pjatk.s19701.view.Search.searchFrame;
@@ -18,7 +17,7 @@ public class PetRecord {
     private JButton searchButton;
     private JButton addVisitButton;
     private BackButton backButton;
-    private JComboBox comboBox1;
+    private JComboBox visitDataFields;
     private JPanel PatientInformatioJPanel;
     private JPanel SearchForVisit;
     private JPanel MedicalInformation;
@@ -30,6 +29,9 @@ public class PetRecord {
     private JScrollPane MedicalHistory;
     static JFrame petRecordFrame = new JFrame(Main.APPLICATION_NAME);
 
+    static JFrame viewDetails = new JFrame(Main.APPLICATION_NAME);
+
+
     public PetRecord(Pet pet){
         searchFrame.dispose();
 
@@ -38,15 +40,15 @@ public class PetRecord {
         List<Visit> visits = pet.getVisits().stream().toList();
 
         String[] visitsHistory = new String[visits.size()];
+        String[] visitsDates = new String[visits.size()];
         for(int i=0; i<visits.size(); i++){
             visitsHistory[i] = visits.get(i).toString();
+            visitsDates[i] = visits.get(i).getDateTime().toLocalDate().toString();
         }
 
         patientInformation.setListData(visitsHistory);
-        patientInformation.addListSelectionListener(l -> {
-                    JOptionPane.showMessageDialog(patientInformation, patientInformation.getSelectedValue());
-                }
-        );
+        patientInformation.addListSelectionListener(listener -> JOptionPane.showMessageDialog(patientInformation, patientInformation.getSelectedValue()));
+
         PatientName.setValue(pet.getName());
         Breed.setValue(pet.getBreed());
         Age.setValue(pet.getAge());
@@ -59,6 +61,28 @@ public class PetRecord {
             searchFrame.setIconImage(Main.frame.getIconImage());
             Search.freshPetRecordFrame.dispose();
         });
+
+        visitDataFields.setModel(new DefaultComboBoxModel(visitsDates));
+
+        searchButton.addActionListener(event -> {
+            visitDataFields.getEditor().getItem();
+
+            visits.forEach(visit -> {
+                if(datesAreEq(visit)) {
+                    viewDetails.setContentPane(new VisitDetails(visit, pet).mainPanel);
+                    viewDetails.setVisible(true);
+                    viewDetails.setSize(Main.INIT_WIDTH, Main.INIT_HEIGHT);
+                    viewDetails.setIconImage(Main.frame.getIconImage());
+                    Search.freshPetRecordFrame.dispose();
+                }
+            });
+
+        });
+    }
+
+    private boolean datesAreEq(Visit v) {
+        //naive check. can be done better
+        return v.getDateTime().toLocalDate().toString().equalsIgnoreCase(visitDataFields.getSelectedItem().toString());
     }
 
     public static void main(String[] args) {

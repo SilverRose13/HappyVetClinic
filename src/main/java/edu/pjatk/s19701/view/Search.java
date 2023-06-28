@@ -25,8 +25,6 @@ public class Search {
 
     public Search(){
         petRecordFrame.dispose();
-
-//        PetRecord.petRecordFrame.dispose();
         searchByChipButton.addActionListener(event -> {
             SearchByChipController searchByChipController = new SearchByChipController();
             Pet pet = searchByChipController.findPetByChip(chipNumberTextField.getText());
