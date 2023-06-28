@@ -13,7 +13,7 @@ public class Visit {
 
     @Id
     @GeneratedValue
-    @Column( columnDefinition = "uuid", updatable = false )
+    @Column(updatable = false )
     private UUID id;
 
 
@@ -24,13 +24,16 @@ public class Visit {
     @Column(name = "dateTime", nullable = false)
     private LocalDateTime dateTime;
 
-    @ManyToOne(optional=false)
+    @ManyToOne(cascade = CascadeType.ALL, optional=false)
     @JoinColumn(name="pet_id", nullable=false, updatable=false)
     private Pet pet;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "visits")
-//    @JoinTable(name = "diagnosis")
-    public Set<Condition> conditions;
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable(
+            joinColumns = @JoinColumn(name="VISIT_ID", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "CONDITION_ID", referencedColumnName = "id")
+    )
+    public Set<Condition> conditions = new HashSet<>();
 
     public UUID getId() {
         return id;
@@ -73,8 +76,20 @@ public class Visit {
     }
 
 
+    private String prettyPrintConditions() {
+        StringBuilder sb = new StringBuilder();
+        this.conditions.forEach(c -> {
+            sb.append("Symptom: ").append(c.getSymptoms()).append("\n");
+
+            c.getDiseases().forEach(d -> sb.append("Disease diagnosed: ").append(d.name()).append("\n"));
+        });
+
+        return sb.toString();
+    }
     @Override
     public String toString() {
-        return "Visit: " + dateTime.toLocalDate() + " by " + employee.getFullName();
+        return "Visit: " + dateTime.toLocalDate()  + "\n by "
+                + getEmployee().getFullName() + "\n"
+                + prettyPrintConditions();
     }
 }

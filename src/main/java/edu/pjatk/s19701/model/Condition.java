@@ -10,7 +10,7 @@ public class Condition {
 
     @Id
     @GeneratedValue
-    @Column( columnDefinition = "uuid", updatable = false )
+    @Column(updatable = false )
     private UUID id;
     @Column(name = "symptoms", nullable = false)
     private String symptoms;
@@ -18,11 +18,7 @@ public class Condition {
     @Column
     private List<Disease> diseases = new ArrayList<>();
 
-    @ManyToMany(cascade = {CascadeType.PERSIST})
-    @JoinTable(name = "diagnosis",
-                        joinColumns = @JoinColumn(name="VISIT_ID", referencedColumnName = "ID"),
-            inverseJoinColumns = @JoinColumn(name = "CONDITION_ID", referencedColumnName = "ID")
-    )
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "conditions")
     private Set<Visit> visits = new HashSet<>();
 
     public UUID getId() {

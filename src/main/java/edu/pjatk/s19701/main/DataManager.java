@@ -4,12 +4,10 @@ import edu.pjatk.s19701.model.*;
 import edu.pjatk.s19701.model.employee.Employee;
 import edu.pjatk.s19701.model.owner.Owner;
 import edu.pjatk.s19701.model.pet.Pet;
-import org.hibernate.Session;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -73,13 +71,12 @@ public class DataManager {
         return pet;
     }
 
-    private Condition createCondition() {
+    private void createCondition() {
         Condition condition = new Condition();
         condition.setDiseases(List.of(Disease.ANTHRAX));
         condition.setSymptoms("high fever, blood around nose and mouth");
 
         HibernateSessionFactory.save(condition);
-        return condition;
     }
 
     private Visit createVisit(Pet pet, Employee employee) {
@@ -89,21 +86,13 @@ public class DataManager {
         visit.setEmployee(employee);
 
         Condition sampleCondition = new Condition();
-        sampleCondition.setSymptoms("tmp");
+        sampleCondition.setSymptoms("Sample symptom");
         sampleCondition.setDiseases(List.of(Disease.AFLATOXICOSIS));
-        visit.setConditions(Set.of(sampleCondition));
+        sampleCondition.getVisits().add(visit);
+        visit.getConditions().add(sampleCondition);
+
         pet.getVisits().add(visit);
         HibernateSessionFactory.save(visit);
-
-
-        //walk around - below object should be somehow updated by save visits, but it is not.
-        try(Session session = HibernateSessionFactory.getSessionFactory().openSession()) {
-            session.beginTransaction();
-            session.merge(pet);
-            session.getTransaction().commit();
-        } catch(Exception e) {
-            logger.warning("Not successfully PET merge");
-        }
 
         return visit;
     }

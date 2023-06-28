@@ -51,7 +51,7 @@ public class HibernateSessionFactory {
             transaction = session.beginTransaction();
 
             // save
-            session.persist(o);
+            session.saveOrUpdate(o);
 
             // commit transaction
             transaction.commit();

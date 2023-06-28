@@ -14,6 +14,7 @@
         <property name="dialect">org.hibernate.dialect.H2Dialect</property>
         <!-- Echo the SQL to stdout -->
         <property name="show_sql">true</property>
+        <property name="org.hibernate.SQL">trace</property>
         <!-- Set the current session context -->
         <property name="current_session_context_class">thread</property>
         <!-- Drop and re-create the database schema on startup -->
