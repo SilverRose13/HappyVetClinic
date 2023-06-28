@@ -16,7 +16,7 @@ import static edu.pjatk.s19701.view.Search.searchFrame;
 public class PetRecord {
     private Pet pet;
     public JPanel mainPetRecord;
-    public JList<JButton> patientInformation;
+    public JList<String> patientInformation;
     private JButton searchButton;
     private JButton addVisitButton;
     private JButton backButton;
@@ -36,34 +36,24 @@ public class PetRecord {
 
         this.pet = pet;
 
-        patientInformation = new JList<JButton>();
+        //patientInformation = new JList<JButton>();
 
         Set<Visit> visits = pet.getVisits();
         Iterator<Visit> visitsIterator = visits.iterator();
 
         while(visitsIterator.hasNext()){
-            Visit i = (Visit) visitsIterator.next();
-            new JButton(i.toString());
+            Visit i = visitsIterator.next();
+            patientInformation.add(new JButton(i.toString()));
         }
+        patientInformation.setVisible(true);
 
 
 
-
-
-/*        String[] dates = new String[pet.getVisits().size()];
-        Visit[] visits = pet.getVisits().toArray();
-
-        DefaultListModel medicalHistoryList = new DefaultListModel();
-        //medicalHistoryList.addAll(pet.getVisits());
-        patientInformation.setModel(medicalHistoryList);
-
-        patientInformation = new JList<String>(dates);
-        patientInformation.setVisible(true);*/
 
         PatientName.setValue(pet.getName());
         Breed.setValue(pet.getBreed());
-        //Age.setValue(pet.getAge());
-        //OwnersName.setValue(pet.getOwner().getFullName());
+        Age.setValue(pet.getAge());
+        OwnersName.setValue(pet.getOwner().getFullName());
 
 
         backButton.addActionListener(event -> {

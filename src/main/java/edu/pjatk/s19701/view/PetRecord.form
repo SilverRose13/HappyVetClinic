@@ -42,6 +42,8 @@
               <component id="bab99" class="javax.swing.JList" binding="patientInformation">
                 <constraints/>
                 <properties>
+                  <doubleBuffered value="false"/>
+                  <enabled value="true"/>
                   <font name="Courier New" size="14" style="0"/>
                   <selectedIndex value="-1"/>
                   <valueIsAdjusting value="true"/>
