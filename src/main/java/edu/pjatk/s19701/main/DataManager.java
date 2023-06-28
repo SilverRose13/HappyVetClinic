@@ -54,8 +54,8 @@ public class DataManager {
 
     private static Owner createOwner() {
         Owner owner = new Owner();
-        owner.setName("OwnerName");
-        owner.setSurname("OwnerSurname");
+        owner.setName("Marek");
+        owner.setSurname("Banasik");
         owner.setPassword("owner");
         owner.setUsername("Owner");
 
@@ -69,6 +69,7 @@ public class DataManager {
         pet.setName("Zazu");
         pet.setBirthday(LocalDate.of(2020, 12, 12));
         pet.setOwner(owner);
+        pet.setBreed("Siberian Husky");
 
         HibernateSessionFactory.save(pet);
         return pet;

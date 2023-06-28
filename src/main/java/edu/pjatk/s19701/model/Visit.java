@@ -16,6 +16,7 @@ public class Visit {
     @Column( columnDefinition = "uuid", updatable = false )
     private UUID id;
 
+
     @ManyToOne
     @JoinColumn(name = "id_employee")
     private Employee employee;

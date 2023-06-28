@@ -1,29 +1,32 @@
 package edu.pjatk.s19701.view;
 
 import edu.pjatk.s19701.main.Main;
+import edu.pjatk.s19701.model.Visit;
 import edu.pjatk.s19701.model.pet.Pet;
 
 import javax.swing.*;
+
+import java.lang.reflect.Array;
+import java.util.Set;
 
 import static edu.pjatk.s19701.view.Search.searchFrame;
 
 public class PetRecord {
     private Pet pet;
     public JPanel mainPetRecord;
-    private JList<JButton> patientInformation;
+    public JList<JButton> patientInformation;
     private JButton searchButton;
     private JButton addVisitButton;
     private JButton backButton;
     private JComboBox comboBox1;
     private JPanel PatientInformatioJPanel;
     private JPanel SearchForVisit;
-    private JPanel SaveAndAddVisitButtons;
-    private JLabel AppName;
     private JPanel MedicalInformation;
     private JFormattedTextField PatientName;
     private JFormattedTextField Breed;
     private JFormattedTextField OwnersName;
     private JFormattedTextField Age;
+    private JPanel BottomRow;
     static JFrame petRecordFrame = new JFrame(Main.APPLICATION_NAME);
 
     public PetRecord(Pet pet){
@@ -31,9 +34,16 @@ public class PetRecord {
 
         this.pet = pet;
 
+        DefaultListModel medicalHistoryList = new DefaultListModel();
+        //medicalHistoryList.addAll(pet.getVisits());
+        patientInformation.setModel(medicalHistoryList);
+        patientInformation.setVisible(true);
+
         PatientName.setValue(pet.getName());
         Breed.setValue(pet.getBreed());
-        Age.setValue(pet.getAge());
+        //Age.setValue(pet.getAge());
+        //OwnersName.setValue(pet.getOwner().getFullName());
+
 
         backButton.addActionListener(event -> {
             searchFrame.setContentPane(new Search().mainSearchForPet);
