@@ -5,6 +5,8 @@ import edu.pjatk.s19701.model.Visit;
 import edu.pjatk.s19701.model.pet.Pet;
 
 import javax.swing.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.List;
 
 import static edu.pjatk.s19701.view.Search.searchFrame;
@@ -41,12 +43,14 @@ public class PetRecord {
         }
 
         patientInformation.setListData(visitsHistory);
-
+        patientInformation.addListSelectionListener(l -> {
+                    JOptionPane.showMessageDialog(patientInformation, patientInformation.getSelectedValue());
+                }
+        );
         PatientName.setValue(pet.getName());
         Breed.setValue(pet.getBreed());
         Age.setValue(pet.getAge());
         OwnersName.setValue(pet.getOwner().getFullName());
-
 
         backButton.addActionListener(event -> {
             searchFrame.setContentPane(new Search().mainSearchForPet);
