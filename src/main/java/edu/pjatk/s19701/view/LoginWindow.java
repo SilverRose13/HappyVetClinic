@@ -5,12 +5,12 @@ import edu.pjatk.s19701.controller.LoginController;
 import edu.pjatk.s19701.main.Main;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class LoginWindow extends JFrame {
     JPanel mainPanel;
     JTextField usernameField;
     JButton loginButton;
-    JLabel appName;
 
     @SuppressWarnings("unused")
     JLabel passwordLabel;
@@ -20,6 +20,8 @@ public class LoginWindow extends JFrame {
 
 
     public LoginWindow() {
+
+        loginButton.setBorderPainted(false);
 
         loginButton.addActionListener(event -> {
             LoginController loginController = new LoginController();

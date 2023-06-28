@@ -13,12 +13,9 @@ public class Search {
     private JTextField nameTextField;
     private JTextField surnameTextField;
     private JButton searchByOwnerButton;
-    private JLabel searchByChipLabel;
     private JTextField chipNumberTextField;
-    private JLabel searchByOwnerLabel;
     private JLabel nameLabel;
     private JLabel surnameLabel;
-    private JLabel searchForPetLabel;
     public JPanel mainSearchForPet;
     private JPanel SearchByChipPanel;
     private JPanel SearchByOwner;
