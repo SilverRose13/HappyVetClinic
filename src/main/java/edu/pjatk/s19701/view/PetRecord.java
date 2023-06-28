@@ -7,6 +7,8 @@ import edu.pjatk.s19701.model.pet.Pet;
 import javax.swing.*;
 
 import java.lang.reflect.Array;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 import static edu.pjatk.s19701.view.Search.searchFrame;
@@ -34,10 +36,29 @@ public class PetRecord {
 
         this.pet = pet;
 
+        patientInformation = new JList<JButton>();
+
+        Set<Visit> visits = pet.getVisits();
+        Iterator<Visit> visitsIterator = visits.iterator();
+
+        while(visitsIterator.hasNext()){
+            Visit i = (Visit) visitsIterator.next();
+            new JButton(i.toString());
+        }
+
+
+
+
+
+/*        String[] dates = new String[pet.getVisits().size()];
+        Visit[] visits = pet.getVisits().toArray();
+
         DefaultListModel medicalHistoryList = new DefaultListModel();
         //medicalHistoryList.addAll(pet.getVisits());
         patientInformation.setModel(medicalHistoryList);
-        patientInformation.setVisible(true);
+
+        patientInformation = new JList<String>(dates);
+        patientInformation.setVisible(true);*/
 
         PatientName.setValue(pet.getName());
         Breed.setValue(pet.getBreed());
