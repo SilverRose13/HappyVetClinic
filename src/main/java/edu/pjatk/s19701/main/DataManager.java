@@ -10,7 +10,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Set;
-import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -25,9 +24,9 @@ public class DataManager {
         Clinic clinic = createClinic();
         Owner owner = createOwner();
         Pet pet = createPet(owner);
-        Condition condition = createCondition();
+        createCondition();
         Employee employee = createEmployee(clinic);
-        Visit visit = createVisit(pet, employee, condition);
+        Visit visit = createVisit(pet, employee);
         logger.log(Level.INFO, "Registered visit: {0}", visit);
     }
 
@@ -70,7 +69,6 @@ public class DataManager {
         pet.setBirthday(LocalDate.of(2020, 12, 12));
         pet.setOwner(owner);
         pet.setBreed("Siberian Husky");
-
         HibernateSessionFactory.save(pet);
         return pet;
     }
@@ -84,16 +82,28 @@ public class DataManager {
         return condition;
     }
 
-    private Visit createVisit(Pet pet, Employee employee, Condition condition) {
+    private Visit createVisit(Pet pet, Employee employee) {
         Visit visit = new Visit();
         visit.setDateTime(LocalDateTime.now().minusMonths(1));
         visit.setPet(pet);
         visit.setEmployee(employee);
+
         Condition sampleCondition = new Condition();
         sampleCondition.setSymptoms("tmp");
         sampleCondition.setDiseases(List.of(Disease.AFLATOXICOSIS));
         visit.setConditions(Set.of(sampleCondition));
+        pet.getVisits().add(visit);
         HibernateSessionFactory.save(visit);
+
+
+        //walk around - below object should be somehow updated by save visits, but it is not.
+        try(Session session = HibernateSessionFactory.getSessionFactory().openSession()) {
+            session.beginTransaction();
+            session.merge(pet);
+            session.getTransaction().commit();
+        } catch(Exception e) {
+            logger.warning("Not successfully PET merge");
+        }
 
         return visit;
     }

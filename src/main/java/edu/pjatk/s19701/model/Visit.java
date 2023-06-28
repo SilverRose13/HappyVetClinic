@@ -24,11 +24,11 @@ public class Visit {
     @Column(name = "dateTime", nullable = false)
     private LocalDateTime dateTime;
 
-    @ManyToOne
-    @JoinColumn(name = "id_pet")
+    @ManyToOne(optional=false)
+    @JoinColumn(name="pet_id", nullable=false, updatable=false)
     private Pet pet;
 
-    @ManyToMany(cascade = CascadeType.PERSIST, mappedBy = "visits")
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "visits")
 //    @JoinTable(name = "diagnosis")
     public Set<Condition> conditions;
 
@@ -75,12 +75,6 @@ public class Visit {
 
     @Override
     public String toString() {
-        return "Visit{" +
-                "id=" + id +
-                ", employee=" + employee +
-                ", dateTime=" + dateTime +
-                ", pet=" + pet +
-                ", conditions=" + conditions +
-                '}';
+        return "Visit: " + dateTime.toLocalDate() + " by " + employee.getFullName();
     }
 }

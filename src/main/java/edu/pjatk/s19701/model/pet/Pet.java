@@ -30,7 +30,7 @@ public class Pet {
     @Column(name = "breed")
     private String breed;
 
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "visit_id")
     private Set<Visit> visits = new HashSet<>();
 
