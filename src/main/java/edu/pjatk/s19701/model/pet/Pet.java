@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
@@ -70,7 +71,7 @@ public class Pet {
         return visits;
     }
 
-    public void setVisits(Set<Visit> visits) {
+    public void setVisits(HashSet<Visit> visits) {
         this.visits = visits;
     }
 
@@ -101,5 +102,9 @@ public class Pet {
             return Period.between(birthday, currentDate).getMonths();
         }
 
+    }
+
+    public void addVisit(Visit visit) {
+        this.visits.add(visit);
     }
 }

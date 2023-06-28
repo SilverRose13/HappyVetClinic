@@ -38,4 +38,9 @@ public class Condition {
     public void setDiseases(Disease diseases) {
         this.diseases.add(diseases);
     }
+
+
+    public void addVisit(Visit visit) {
+
+    }
 }
