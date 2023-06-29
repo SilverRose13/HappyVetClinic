@@ -67,9 +67,12 @@
                 </constraints>
                 <properties>
                   <background color="-14275015"/>
-                  <borderPainted value="false"/>
+                  <borderPainted value="true"/>
+                  <contentAreaFilled value="true"/>
+                  <focusPainted value="false"/>
                   <font name="Courier New" size="16" style="1"/>
-                  <opaque value="true"/>
+                  <foreground color="-14275015"/>
+                  <opaque value="false"/>
                   <text value="Search"/>
                   <verticalAlignment value="0"/>
                 </properties>
@@ -101,18 +104,6 @@
                 </properties>
                 <border type="none"/>
                 <children>
-                  <component id="58349" class="javax.swing.JTextField" binding="surnameTextField" default-binding="true">
-                    <constraints>
-                      <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="10" fill="1" indent="0" use-parent-layout="false">
-                        <preferred-size width="150" height="-1"/>
-                      </grid>
-                    </constraints>
-                    <properties>
-                      <enabled value="false"/>
-                      <text value=""/>
-                      <toolTipText value="Surname"/>
-                    </properties>
-                  </component>
                   <component id="68267" class="javax.swing.JLabel" binding="nameLabel">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="10" fill="0" indent="0" use-parent-layout="false"/>
@@ -123,19 +114,22 @@
                       <text value="Name"/>
                     </properties>
                   </component>
-                  <component id="ef30a" class="javax.swing.JLabel" binding="surnameLabel">
+                  <component id="ec5ee" class="javax.swing.JButton" binding="searchByOwnerButton">
                     <constraints>
-                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="10" fill="0" indent="0" use-parent-layout="false"/>
+                      <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                        <preferred-size width="92" height="30"/>
+                      </grid>
                     </constraints>
                     <properties>
-                      <font name="Courier New" size="15" style="1"/>
-                      <foreground color="-14275015"/>
-                      <text value="Surname"/>
+                      <defaultCapable value="true"/>
+                      <enabled value="false"/>
+                      <font name="Courier New" size="16" style="1"/>
+                      <text value="Search"/>
                     </properties>
                   </component>
                   <component id="3d632" class="javax.swing.JTextField" binding="nameTextField" default-binding="true">
                     <constraints>
-                      <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="10" fill="1" indent="0" use-parent-layout="false">
+                      <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="10" fill="1" indent="0" use-parent-layout="false">
                         <preferred-size width="150" height="-1"/>
                       </grid>
                     </constraints>
@@ -146,15 +140,26 @@
                       <toolTipText value="Name"/>
                     </properties>
                   </component>
-                  <component id="ec5ee" class="javax.swing.JButton" binding="searchByOwnerButton">
+                  <component id="58349" class="javax.swing.JTextField" binding="surnameTextField" default-binding="true">
                     <constraints>
-                      <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                      <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="10" fill="1" indent="0" use-parent-layout="false">
+                        <preferred-size width="150" height="-1"/>
+                      </grid>
                     </constraints>
                     <properties>
-                      <defaultCapable value="true"/>
                       <enabled value="false"/>
-                      <font name="Courier New" size="16" style="1"/>
-                      <text value="Search"/>
+                      <text value=""/>
+                      <toolTipText value="Surname"/>
+                    </properties>
+                  </component>
+                  <component id="ef30a" class="javax.swing.JLabel" binding="surnameLabel">
+                    <constraints>
+                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="10" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <font name="Courier New" size="15" style="1"/>
+                      <foreground color="-14275015"/>
+                      <text value="Surname"/>
                     </properties>
                   </component>
                 </children>
