@@ -81,11 +81,13 @@
               <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="4" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <background color="-4201499"/>
+              <background color="-14275015"/>
+              <borderPainted value="true"/>
               <doubleBuffered value="true"/>
               <enabled value="true"/>
+              <focusPainted value="false"/>
               <font name="Courier New" size="16" style="1"/>
-              <foreground color="-14275015"/>
+              <foreground color="-2359809"/>
               <opaque value="true"/>
               <text value="LOGIN"/>
             </properties>

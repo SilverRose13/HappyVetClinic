@@ -13,7 +13,3 @@ a
 1src/main/java/edu/pjatk/s19701/model/pet/Pet.java,3/d/3d3887dd6182372bf45a6eee37d3bd53e55ababe
 _
 /src/main/java/edu/pjatk/s19701/model/Visit.java,2/f/2f2b98cf91d4a8c89ce97b39d572f8e409b8b3e5
-b
-2src/main/java/edu/pjatk/s19701/view/PetRecord.form,9/f/9fc78c49dcf605d72f99f0f2a10be600540fbc51
-b
-2src/main/java/edu/pjatk/s19701/view/PetRecord.java,7/5/751ded356acf8903812923afb0cb3f65935968b8
