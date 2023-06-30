@@ -26,6 +26,7 @@ public class Main {
         runGUI();
     }
 
+    //opens to the primary page of the GUI (i.e. the login page)
     private static void runGUI() {
         frame.setContentPane(new LoginWindow().getMainPanel());
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);

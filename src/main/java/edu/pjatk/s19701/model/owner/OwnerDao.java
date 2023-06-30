@@ -13,7 +13,8 @@ import org.hibernate.query.Query;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Data Access Object
+//Used to retrieve data saved in the Owner entity
 public class OwnerDao implements OwnerDaoInterface, PersonDaoInterface<Person, String> {
 
     private static Session getOrOpenSession() {
@@ -31,6 +32,7 @@ public class OwnerDao implements OwnerDaoInterface, PersonDaoInterface<Person, S
         owner.setUsername(username);
         owner.setPassword(password);
 
+        //
         Transaction transaction = getOrOpenSession().beginTransaction();
         CriteriaBuilder criteriaBuilder = getOrOpenSession().getCriteriaBuilder();
         CriteriaQuery<Owner> criteriaQuery = criteriaBuilder.createQuery(Owner.class);

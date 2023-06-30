@@ -46,6 +46,7 @@ public class DataManager {
         employee.setPassword("admin");
         employee.setUsername("Vet");
         employee.setJobTitle(JobTitle.VETERINARIAN);
+        //setting the Employee's Clinic
         employee.setClinic(clinic);
 
         HibernateSessionFactory.save(employee);
@@ -80,6 +81,7 @@ public class DataManager {
         condition.setSymptoms("high fever, blood around nose and mouth");
 
         HibernateSessionFactory.save(condition);
+        //saved to database but with no connection to a visit
     }
 
     private Visit createVisit(Pet pet, Employee employee, int monthsAgo, Disease disease) {
@@ -88,12 +90,15 @@ public class DataManager {
         visit.setPet(pet);
         visit.setEmployee(employee);
 
+        //setting the Condition observed during the Visit
         Condition sampleCondition = new Condition();
         sampleCondition.setSymptoms("Sample symptom");
         sampleCondition.setDiseases(List.of(disease));
         sampleCondition.getVisits().add(visit);
+        //connecting the newly created condition with the visit being created
         visit.getConditions().add(sampleCondition);
 
+        //setting which Pet was at this Visit
         pet.getVisits().add(visit);
         HibernateSessionFactory.save(visit);
 

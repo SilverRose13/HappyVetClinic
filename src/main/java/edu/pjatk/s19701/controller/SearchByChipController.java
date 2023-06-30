@@ -7,6 +7,7 @@ public class SearchByChipController {
 
     PetDao petDao = new PetDao();
 
+    //searching for a record of a Pet with the provided chip number
     public Pet findPetByChip(String chipNumber){
         return petDao.searchByChip(chipNumber);
     }

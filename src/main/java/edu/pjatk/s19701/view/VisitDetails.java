@@ -30,6 +30,9 @@ public class VisitDetails {
              */
             @Override
             public void actionPerformed(ActionEvent e) {
+
+                //populating the fields with information about the visit
+                //uses instance of Pet found through the Search screen and passed through the PetRecord screen
                 if(pet != null){
                     freshPetRecordFrame.setContentPane(new PetRecord(pet).mainPetRecord);
                     freshPetRecordFrame.setVisible(true);
