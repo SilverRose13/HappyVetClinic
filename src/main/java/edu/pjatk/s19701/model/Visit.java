@@ -16,7 +16,7 @@ public class Visit {
     @Column(updatable = false )
     private UUID id;
 
-
+    //relation to the Employee supervising the Visit
     @ManyToOne
     @JoinColumn(name = "id_employee")
     private Employee employee;
@@ -24,10 +24,12 @@ public class Visit {
     @Column(name = "dateTime", nullable = false)
     private LocalDateTime dateTime;
 
+    //relation to the Pet being treated at the visit
     @ManyToOne(cascade = CascadeType.ALL, optional=false)
     @JoinColumn(name="pet_id", nullable=false, updatable=false)
     private Pet pet;
 
+    //relation to the conditions observed and/or diagnosed during the visit
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(
             joinColumns = @JoinColumn(name="VISIT_ID", referencedColumnName = "id"),
@@ -76,6 +78,7 @@ public class Visit {
     }
 
 
+    //primarily for printing of conditions for the Medical Conditions section in the PetRecord screen
     private String prettyPrintConditions() {
         StringBuilder sb = new StringBuilder();
         this.conditions.forEach(c -> {
@@ -88,7 +91,7 @@ public class Visit {
     }
     @Override
     public String toString() {
-        return "Visit: " + dateTime.toLocalDate()  + "\n by "
+        return "Visit: " + dateTime.toLocalDate()  + "\n Supervised by "
                 + getEmployee().getFullName() + "\n"
                 + prettyPrintConditions();
     }

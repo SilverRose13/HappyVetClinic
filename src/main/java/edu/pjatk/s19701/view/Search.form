@@ -122,7 +122,7 @@
                     </constraints>
                     <properties>
                       <defaultCapable value="true"/>
-                      <enabled value="false"/>
+                      <enabled value="true"/>
                       <font name="Courier New" size="16" style="1"/>
                       <text value="Search"/>
                     </properties>
@@ -134,7 +134,7 @@
                       </grid>
                     </constraints>
                     <properties>
-                      <enabled value="false"/>
+                      <enabled value="true"/>
                       <font name="Courier New" size="14" style="0"/>
                       <text value=""/>
                       <toolTipText value="Name"/>
@@ -147,7 +147,7 @@
                       </grid>
                     </constraints>
                     <properties>
-                      <enabled value="false"/>
+                      <enabled value="true"/>
                       <text value=""/>
                       <toolTipText value="Surname"/>
                     </properties>

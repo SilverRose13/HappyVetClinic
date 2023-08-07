@@ -1,10 +1,15 @@
 package edu.pjatk.s19701.view;
 
 import edu.pjatk.s19701.controller.SearchByChipController;
+import edu.pjatk.s19701.controller.SearchByOwnerController;
+import edu.pjatk.s19701.model.owner.Owner;
 import edu.pjatk.s19701.model.pet.Pet;
 import edu.pjatk.s19701.main.Main;
 
 import javax.swing.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static edu.pjatk.s19701.view.PetRecord.petRecordFrame;
 
@@ -22,6 +27,7 @@ public class Search {
     private JPanel searchByOwnerPanel;
     public static JFrame searchFrame = new JFrame("Search");
     static JFrame freshPetRecordFrame = new JFrame(Main.APPLICATION_NAME);
+    static JFrame freshPetListFrame = new JFrame(Main.APPLICATION_NAME);
 
     public Search(){
         //if we are coming back from the PetRecord page, we need to discard it
@@ -43,11 +49,46 @@ public class Search {
                 LoginWindow.searchFrame.dispose();
                 return;
             }
-
             //if no record of Pet with the provided chip number is found
-                // a pop-up informs the user that an invalid chip number was provided
+            // a pop-up informs the user that an invalid chip number was provided
             JOptionPane.showMessageDialog(searchByChipButton, "Chip number not found");
         });
+
+        searchByOwnerButton.addActionListener(event -> {
+            SearchByOwnerController searchByOwnerController = new SearchByOwnerController();
+            //verifing that such an owner exists in the database
+            Owner owner = searchByOwnerController.verifyOwnerExistence(
+                    nameTextField.getText(), surnameTextField.getText());
+
+            //if data for this owner exists pass it on to next screen
+            if(owner != null){
+                List<Pet> petList = searchByOwnerController.getOwnersPets(owner);
+
+                //check if owner has pets before continuing to next screen
+                if(petList == null){
+                    //if petList is null that means there are no Pets associated with this owner
+                    JOptionPane.showMessageDialog(searchByOwnerButton, "Owner found but doesn't have any Pets!");
+                } else {
+                    //test to see if the query works
+                    JOptionPane.showMessageDialog(searchByOwnerButton, petList.get(0).getName());
+
+                    //the found pet list is passed to the PetList instance
+                    // so that it can be used to populate the fields containing information about the Owner's Pets
+                    freshPetListFrame.setContentPane(new PetList(owner, petList).mainPetList);
+                    freshPetListFrame.setVisible(true);
+                    freshPetListFrame.setSize(Main.INIT_WIDTH, Main.INIT_HEIGHT);
+                    freshPetListFrame.setIconImage(Main.frame.getIconImage());
+                    LoginWindow.searchFrame.dispose();
+                    return;
+                }
+            } else {
+                //else return error message
+                JOptionPane.showMessageDialog(searchByOwnerButton, "Owner not found");
+            }
+        });
+
+
+
     }
 
     //main for testing the screen without going through the login process every time

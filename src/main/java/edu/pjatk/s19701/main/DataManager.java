@@ -20,8 +20,12 @@ public class DataManager {
 
     public void initDataSet() {
         Clinic clinic = createClinic();
-        Owner owner = createOwner();
-        Pet pet = createPet(owner);
+        Owner ownerWithPets = createOwner("Marek", "Banasik", "owner", "Owner");
+        logger.log(Level.INFO, "Registered visit: {0}", ownerWithPets);
+        Owner ownerSansPets = createOwner("Filipek", "Furman", "owner", "OtherOwner");
+        logger.log(Level.INFO, "Registered visit: {0}", ownerSansPets);
+
+        Pet pet = createPet(ownerWithPets);
         createCondition();
         Employee employee = createEmployee(clinic);
         Visit visit = createVisit(pet, employee, 1, Disease.AFLATOXICOSIS);
@@ -53,12 +57,12 @@ public class DataManager {
         return employee;
     }
 
-    private static Owner createOwner() {
+    private static Owner createOwner(String name, String surname, String password, String username) {
         Owner owner = new Owner();
-        owner.setName("Marek");
-        owner.setSurname("Banasik");
-        owner.setPassword("owner");
-        owner.setUsername("Owner");
+        owner.setName(name);
+        owner.setSurname(surname);
+        owner.setPassword(password);
+        owner.setUsername(username);
 
         HibernateSessionFactory.save(owner);
         return owner;
