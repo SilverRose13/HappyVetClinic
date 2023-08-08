@@ -1,3 +1,4 @@
+<!-- Hibernate configuration file -->
 <!DOCTYPE hibernate-configuration PUBLIC
         "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
@@ -7,6 +8,7 @@
         <property name="connection.driver_class">org.h2.Driver</property>
         <property name="connection.url">jdbc:h2:~/test</property>
         <property name="connection.username">sa</property>
+        <!-- no password to access the DB -->
         <property name="connection.password"></property>
         <!-- JDBC connection pool settings ... using built-in test pool -->
         <property name="connection.pool_size">1</property>
@@ -14,6 +16,7 @@
         <property name="dialect">org.hibernate.dialect.H2Dialect</property>
         <!-- Echo the SQL to stdout -->
         <property name="show_sql">true</property>
+        <property name="org.hibernate.SQL">trace</property>
         <!-- Set the current session context -->
         <property name="current_session_context_class">thread</property>
         <!-- Drop and re-create the database schema on startup -->
@@ -30,9 +33,9 @@
         <mapping class="edu.pjatk.s19701.model.employee.Employee" />
         <mapping class="edu.pjatk.s19701.model.owner.Owner" />
         <mapping class="edu.pjatk.s19701.model.Clinic" />
-        <mapping class="edu.pjatk.s19701.model.Diagnosis" /> <!-- no error but does  it need to be given attributes of foreign keys? -->
+        <mapping class="edu.pjatk.s19701.model.Diagnosis" />
         <mapping class="edu.pjatk.s19701.model.Condition" />
-        <mapping class="edu.pjatk.s19701.model.Diseases" />
+        <mapping class="edu.pjatk.s19701.model.Disease" />
         <mapping class="edu.pjatk.s19701.model.JobTitle" />
         <mapping class="edu.pjatk.s19701.model.pet.Pet" />
         <mapping class="edu.pjatk.s19701.model.Visit" />

@@ -11,7 +11,7 @@ Owner/owner
 - fix sonarlint findings
 
 ### DB
-As a backend is used H2 database (in memory).
+An H2 database is used as a backend (in memory).
 
     Link to h2 console:
         http://www.h2database.com/html/download.html

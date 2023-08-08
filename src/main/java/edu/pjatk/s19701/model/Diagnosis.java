@@ -8,9 +8,15 @@ import java.util.UUID;
 @Table(name = "Diagnosis")
 public class Diagnosis {
 
-    @GeneratedValue(strategy = GenerationType.UUID)
-    @Column(name = "id",nullable = false)
     @Id
-    private UUID diagnosisId;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(name = "id", nullable = false)
+    private UUID id;
+    public UUID getId() {
+        return id;
+    }
+    public void setId(UUID id) {
+        this.id = id;
+    }
 
 }

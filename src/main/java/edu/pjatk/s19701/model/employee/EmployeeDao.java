@@ -32,10 +32,14 @@ public class EmployeeDao implements PersonDaoInterface<Person, String> {
         employee.setPassword(password);
 
         Transaction transaction = getOrOpenSession().beginTransaction();
+
         CriteriaBuilder criteriaBuilder = getOrOpenSession().getCriteriaBuilder();
         CriteriaQuery<Employee> criteriaQuery = criteriaBuilder.createQuery(Employee.class);
+
         Root<Employee> from = criteriaQuery.from(Employee.class);
+
         List<Predicate> predicates = new ArrayList<>();
+
         predicates.add(criteriaBuilder.equal(from.get("username"), username));
         predicates.add(criteriaBuilder.equal(from.get("password"), password));
 

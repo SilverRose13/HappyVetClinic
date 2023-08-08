@@ -5,8 +5,7 @@ import edu.pjatk.s19701.model.employee.Employee;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @Entity
 @Table(name = "Visit")
@@ -14,9 +13,10 @@ public class Visit {
 
     @Id
     @GeneratedValue
-    @Column( columnDefinition = "uuid", updatable = false )
+    @Column(updatable = false )
     private UUID id;
 
+    //relation to the Employee supervising the Visit
     @ManyToOne
     @JoinColumn(name = "id_employee")
     private Employee employee;
@@ -24,17 +24,18 @@ public class Visit {
     @Column(name = "dateTime", nullable = false)
     private LocalDateTime dateTime;
 
-    @ManyToOne
-    @JoinColumn(name = "id_pet")
+    //relation to the Pet being treated at the visit
+    @ManyToOne(cascade = CascadeType.ALL, optional=false)
+    @JoinColumn(name="pet_id", nullable=false, updatable=false)
     private Pet pet;
 
-    @ManyToMany(cascade = {CascadeType.ALL})
-//    @JoinTable(
-//            name = "Diagnosis",
-//            joinColumns = @JoinColumn(name = "id_visit")
-////            inverseJoinColumns = @JoinColumn(name = "id_condition")
-//    )
-    private List<Condition> conditions;
+    //relation to the conditions observed and/or diagnosed during the visit
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable(
+            joinColumns = @JoinColumn(name="VISIT_ID", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "CONDITION_ID", referencedColumnName = "id")
+    )
+    public Set<Condition> conditions = new HashSet<>();
 
     public UUID getId() {
         return id;
@@ -68,11 +69,30 @@ public class Visit {
         this.pet = pet;
     }
 
-    public List<Condition> getConditions() {
+    public Set<Condition> getConditions() {
         return conditions;
     }
 
-    public void setConditions(List<Condition> conditions) {
+    public void setConditions(Set<Condition> conditions) {
         this.conditions = conditions;
+    }
+
+
+    //primarily for printing of conditions for the Medical Conditions section in the PetRecord screen
+    private String prettyPrintConditions() {
+        StringBuilder sb = new StringBuilder();
+        this.conditions.forEach(c -> {
+            sb.append("Symptom: ").append(c.getSymptoms()).append("\n");
+
+            c.getDiseases().forEach(d -> sb.append("Disease diagnosed: ").append(d.name()).append("\n"));
+        });
+
+        return sb.toString();
+    }
+    @Override
+    public String toString() {
+        return "Visit: " + dateTime.toLocalDate()  + "\n Supervised by "
+                + getEmployee().getFullName() + "\n"
+                + prettyPrintConditions();
     }
 }

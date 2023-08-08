@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
@@ -29,10 +30,14 @@ public class Pet {
     @Column(name = "breed")
     private String breed;
 
-    @OneToMany
+    //the FetchType.EAGER ensures that the associated entities are fetched along with Pet
+    //here it means that when a Pet record is fetched, the associated Visit records will be as well
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "visit_id")
-    private Set<Visit> visits;
+    //the visits this Pet is associated with
+    private Set<Visit> visits = new HashSet<>();
 
+    //each Pet can have one owner
     @ManyToOne
     @JoinColumn(name = "owner")
     private Owner owner;
@@ -74,6 +79,10 @@ public class Pet {
         this.visits = visits;
     }
 
+    public void addVisits(Visit visit) {
+        visits.add(visit);
+    }
+
     public Owner getOwner() {
         return owner;
     }
@@ -91,6 +100,7 @@ public class Pet {
     }
 
     //method for getting the age of a Pet from their birthday
+    //derived attribute
     public int getAge(){
 
         LocalDate currentDate = LocalDate.now();
@@ -102,4 +112,5 @@ public class Pet {
         }
 
     }
+
 }

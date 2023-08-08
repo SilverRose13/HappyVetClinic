@@ -2,7 +2,7 @@ package edu.pjatk.s19701.model;
 
 import jakarta.persistence.*;
 
-import java.util.UUID;
+import java.util.*;
 
 @Entity
 @Table(name = "Condition")
@@ -10,12 +10,16 @@ public class Condition {
 
     @Id
     @GeneratedValue
-    @Column(columnDefinition = "uuid", updatable = false)
+    @Column(updatable = false )
     private UUID id;
     @Column(name = "symptoms", nullable = false)
     private String symptoms;
+
     @Column
-    private Diseases disease;
+    private List<Disease> diseases = new ArrayList<>();
+
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "conditions")
+    private Set<Visit> visits = new HashSet<>();
 
     public UUID getId() {
         return id;
@@ -29,13 +33,29 @@ public class Condition {
         this.symptoms = symptoms;
     }
 
-    public Diseases getDiseases() {
-        return disease;
+    public List<Disease> getDiseases() {
+        return diseases;
     }
 
-    //@TODO setPlural like Diseases, doet not match to what this method do, as it accept only single object (not a list)
+    public void setDiseases(List<Disease> diseases) {
+        this.diseases = diseases;
+    }
 
-    public void setDiseases(Diseases disease) {
-        this.disease = disease;
+    public Set<Visit> getVisits() {
+        return visits;
+    }
+
+    public void setVisits(Set<Visit> visits) {
+        this.visits = visits;
+    }
+
+    @Override
+    public String toString() {
+        return "Condition{" +
+                "id=" + id +
+                ", symptoms='" + symptoms + '\'' +
+                ", diseases=" + diseases +
+                ", visits=" + visits +
+                '}';
     }
 }

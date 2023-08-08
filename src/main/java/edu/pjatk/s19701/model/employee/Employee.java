@@ -59,4 +59,12 @@ public class Employee extends Person {
     public void setJobTitle(JobTitle jobTitle) {
         this.jobTitle = jobTitle;
     }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "clinic=" + clinic +
+                ", jobTitle=" + jobTitle +
+                '}';
+    }
 }

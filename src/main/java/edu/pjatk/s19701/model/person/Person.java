@@ -64,4 +64,8 @@ public class  Person {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public String getFullName(){
+        return getName() + " " + getSurname();
+    }
 }

@@ -1,6 +1,6 @@
 package edu.pjatk.s19701.model;
 
-public enum Diseases {
+public enum Disease {
     AVIAN_INFLUENZA,
     AUSTRALIAN_BAT_LYSSAVIRUS,
     ANTHRAX,
