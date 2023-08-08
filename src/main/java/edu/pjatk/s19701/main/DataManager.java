@@ -25,13 +25,14 @@ public class DataManager {
         Owner ownerSansPets = createOwner("Filipek", "Furman", "owner", "OtherOwner");
         logger.log(Level.INFO, "Registered visit: {0}", ownerSansPets);
 
-        Pet pet = createPet(ownerWithPets);
+        Pet Zazu = createPet("9876543210", "Zazu", LocalDate.of(2020, 12, 12), ownerWithPets, "Siberian Husky Mix");
+        Pet Manu = createPet("0987654321", "Manu", LocalDate.of(2021, 12, 06), ownerWithPets, "Siberian Husky");
         createCondition();
         Employee employee = createEmployee(clinic);
-        Visit visit = createVisit(pet, employee, 1, Disease.AFLATOXICOSIS);
+        Visit visit = createVisit(Zazu, employee, 1, Disease.AFLATOXICOSIS);
         logger.log(Level.INFO, "Registered visit: {0}", visit);
 
-        Visit earlierVisit = createVisit(pet, employee, 2, Disease.ANTHRAX);
+        Visit earlierVisit = createVisit(Zazu, employee, 2, Disease.ANTHRAX);
         logger.log(Level.INFO, "Registered visit: {0}", earlierVisit);
     }
 
@@ -68,13 +69,13 @@ public class DataManager {
         return owner;
     }
 
-    private static Pet createPet(Owner owner) {
+    private static Pet createPet(String chipNumber, String name, LocalDate date, Owner owner, String breed) {
         Pet pet = new Pet();
-        pet.setChipNumber("9876543210");
-        pet.setName("Zazu");
-        pet.setBirthday(LocalDate.of(2020, 12, 12));
+        pet.setChipNumber(chipNumber);
+        pet.setName(name);
+        pet.setBirthday(date);
         pet.setOwner(owner);
-        pet.setBreed("Siberian Husky");
+        pet.setBreed(breed);
         HibernateSessionFactory.save(pet);
         return pet;
     }

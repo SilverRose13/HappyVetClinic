@@ -8,6 +8,8 @@ import edu.pjatk.s19701.model.pet.Pet;
 import javax.swing.*;
 import java.util.List;
 
+import static com.sun.java.accessibility.util.AWTEventMonitor.addActionListener;
+import static edu.pjatk.s19701.view.Search.freshPetRecordFrame;
 import static edu.pjatk.s19701.view.Search.searchFrame;
 
 public class PetList {
@@ -35,7 +37,24 @@ public class PetList {
 
 
         petListJList.setListData(petNamesList);
-        petListJList.addListSelectionListener(listener -> JOptionPane.showMessageDialog(petListJList, petListJList.getSelectedValue()));
+
+        petListJList.addListSelectionListener(listener ->{
+            viewPetButton.addActionListener(pass -> {
+                //JOptionPane.showMessageDialog(petListJList, petListJList.getSelectedValue());
+
+                petList.forEach(petName -> {
+                    if (petName.getName().equalsIgnoreCase(petListJList.getSelectedValue().toString())) {
+                        freshPetRecordFrame.setContentPane(new PetRecord(petName).mainPetRecord);
+                        freshPetRecordFrame.setVisible(true);
+                        freshPetRecordFrame.setSize(Main.INIT_WIDTH, Main.INIT_HEIGHT);
+                        freshPetRecordFrame.setIconImage(Main.frame.getIconImage());
+                        LoginWindow.searchFrame.dispose();
+                        return;
+                    }
+                });
+
+            });
+        });
 
 
 

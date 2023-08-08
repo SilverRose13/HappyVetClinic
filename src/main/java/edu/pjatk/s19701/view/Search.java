@@ -70,7 +70,7 @@ public class Search {
                     JOptionPane.showMessageDialog(searchByOwnerButton, "Owner found but doesn't have any Pets!");
                 } else {
                     //test to see if the query works
-                    JOptionPane.showMessageDialog(searchByOwnerButton, petList.get(0).getName());
+                    //JOptionPane.showMessageDialog(searchByOwnerButton, petList.get(0).getName());
 
                     //the found pet list is passed to the PetList instance
                     // so that it can be used to populate the fields containing information about the Owner's Pets
