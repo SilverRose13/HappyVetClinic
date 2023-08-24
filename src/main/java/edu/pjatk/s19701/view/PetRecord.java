@@ -29,7 +29,7 @@ public class PetRecord {
     private JScrollPane MedicalHistory;
     static JFrame petRecordFrame = new JFrame(Main.APPLICATION_NAME);
 
-    static JFrame viewDetails = new JFrame(Main.APPLICATION_NAME);
+    static JFrame freshViewVisitFrame = new JFrame(Main.APPLICATION_NAME);
 
 
     public PetRecord(Pet pet){
@@ -50,16 +50,17 @@ public class PetRecord {
 
         //list of medical history
         patientInformation.setListData(visitsHistory);
-        //if an item is selected we see the visit details in a pop-up
+        //if an item is selected we see the visit details in a pop-up (in testing  stage)
+        //if an item is selected, a VisitDetails frame is opened to be populated with the selected visit details
         patientInformation.addListSelectionListener(listener -> {
             //JOptionPane.showMessageDialog(patientInformation, patientInformation.getSelectedValue());
             visits.forEach(visit-> {
                 if(visit.toString().equals(patientInformation.getSelectedValue())){
                     //opens a VisitDetails screen
-                    viewDetails.setContentPane(new VisitDetails(visit, pet).mainPanel);
-                    viewDetails.setVisible(true);
-                    viewDetails.setSize(Main.INIT_WIDTH, Main.INIT_HEIGHT);
-                    viewDetails.setIconImage(Main.frame.getIconImage());
+                    freshViewVisitFrame.setContentPane(new VisitDetails(visit, pet).mainPanel);
+                    freshViewVisitFrame.setVisible(true);
+                    freshViewVisitFrame.setSize(Main.INIT_WIDTH, Main.INIT_HEIGHT);
+                    freshViewVisitFrame.setIconImage(Main.frame.getIconImage());
                     Search.freshPetRecordFrame.dispose();
                 }
             });
@@ -91,10 +92,10 @@ public class PetRecord {
                 //searches for the visit with the date chosen
                 if(datesAreEq(visit)) {
                     //opens a VisitDetails screen
-                    viewDetails.setContentPane(new VisitDetails(visit, pet).mainPanel);
-                    viewDetails.setVisible(true);
-                    viewDetails.setSize(Main.INIT_WIDTH, Main.INIT_HEIGHT);
-                    viewDetails.setIconImage(Main.frame.getIconImage());
+                    freshViewVisitFrame.setContentPane(new VisitDetails(visit, pet).mainPanel);
+                    freshViewVisitFrame.setVisible(true);
+                    freshViewVisitFrame.setSize(Main.INIT_WIDTH, Main.INIT_HEIGHT);
+                    freshViewVisitFrame.setIconImage(Main.frame.getIconImage());
                     Search.freshPetRecordFrame.dispose();
                 }
             });

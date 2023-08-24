@@ -60,6 +60,7 @@ public class OwnerDao implements OwnerDaoInterface, PersonDaoInterface<Person, S
         return isNotEmpty;
     }
 
+    //verifies that an owner with the provided name and surname is in  the system
     @Override
     public Owner verifyOwnerExistence(String name, String surname) {
         Owner owner = new Owner();
@@ -74,7 +75,8 @@ public class OwnerDao implements OwnerDaoInterface, PersonDaoInterface<Person, S
         Root<Owner> from = criteriaQuery.from(Owner.class);
 
         List<Predicate> predicates = new ArrayList<>();
-        //for login there are "multiple criteria" as both the username and password need to match the provided
+        //for this search there are "multiple criteria" as a combination of the name and surname
+        // is used to search for Pets associated with a specific owner
         predicates.add(criteriaBuilder.equal(from.get("name"), name));
         predicates.add(criteriaBuilder.equal(from.get("surname"), surname));
 
@@ -82,10 +84,11 @@ public class OwnerDao implements OwnerDaoInterface, PersonDaoInterface<Person, S
         criteriaQuery.select(from).where(predicates.toArray(new Predicate[]{}));
 
         Query<Owner> query = getOrOpenSession().createQuery(criteriaQuery);
-        //should only be one since the username must be unique
+        //the assumption is that the combination of name and surname is unique enough for there to only be one result
         query.setMaxResults(1);
         List<Owner> result = query.getResultList();
         transaction.commit();
+
 
         if(result.isEmpty()){
             return null;

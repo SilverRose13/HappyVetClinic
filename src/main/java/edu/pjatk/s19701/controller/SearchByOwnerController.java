@@ -13,10 +13,13 @@ public class SearchByOwnerController {
     PetDao petDao = new PetDao();
 
     //searching for a record of a Pet with the provided Owner name and surname combination
+    //Uses OwnerDao to communicate with database
     public Owner verifyOwnerExistence(String name, String surname){
         return ownerDao.verifyOwnerExistence(name, surname);
     }
 
+    //returns a list of Pets associated with the provided Owner
+    //Uses PetDao to communicate with the database
     public List<Pet> getOwnersPets(Owner owner){
         return petDao.getOwnersPets(owner);
     }

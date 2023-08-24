@@ -54,6 +54,7 @@ public class PetDao implements PetDaoInterface{
 
     }
 
+    //compiles a list of Pets associated with the provided Owner
     public List<Pet> getOwnersPets(Owner owner) {
         Transaction transaction = getOrOpenSession().beginTransaction();
         CriteriaBuilder criteriaBuilder = getOrOpenSession().getCriteriaBuilder();
@@ -63,7 +64,7 @@ public class PetDao implements PetDaoInterface{
         Root<Pet> from = criteriaQuery.from(Pet.class);
 
         //specifying the criteria for the query
-        //searching for a Pet record with the specified owner like the one provided
+        //searching for a Pet record with the specified Owner like the one provided
         criteriaQuery.select(from).where(criteriaBuilder.equal(from.get("owner"), owner));
 
         //specifying the entity being queried and the query criteria

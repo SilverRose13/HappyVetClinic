@@ -1,17 +1,17 @@
 package edu.pjatk.s19701.view;
 
 import edu.pjatk.s19701.main.Main;
-import edu.pjatk.s19701.model.Visit;
 import edu.pjatk.s19701.model.owner.Owner;
 import edu.pjatk.s19701.model.pet.Pet;
 
 import javax.swing.*;
+import java.util.ArrayList;
 import java.util.List;
 
-import static com.sun.java.accessibility.util.AWTEventMonitor.addActionListener;
 import static edu.pjatk.s19701.view.Search.freshPetRecordFrame;
 import static edu.pjatk.s19701.view.Search.searchFrame;
 
+//displays a screenwith Pets associated with an Owner provided on the Search screen
 public class PetList {
     private List<Pet> petList;
     private Owner owner;
@@ -30,6 +30,7 @@ public class PetList {
         this.owner = owner;
         this.petList = petList;
 
+        //preparing a list of Strings to represent the Pets displayed in petListJList
         String[] petNamesList = new String[petList.size()];
         for(int i = 0; i < petList.size(); i++){
             petNamesList[i] = petList.get(i).getName();
@@ -38,10 +39,14 @@ public class PetList {
 
         petListJList.setListData(petNamesList);
 
+        //if a Pet is selected from the list
         petListJList.addListSelectionListener(listener ->{
+            //if the viewPetButton is pressed
             viewPetButton.addActionListener(pass -> {
                 //JOptionPane.showMessageDialog(petListJList, petListJList.getSelectedValue());
 
+                //for the Pet selected by the user, open a petRecordFrame
+                // to be populated with the selected Pet info
                 petList.forEach(petName -> {
                     if (petName.getName().equalsIgnoreCase(petListJList.getSelectedValue().toString())) {
                         freshPetRecordFrame.setContentPane(new PetRecord(petName).mainPetRecord);
@@ -67,13 +72,26 @@ public class PetList {
             Search.freshPetListFrame.dispose();
         });
     }
-    
-/*    static void main(String[] args){
-        JPanel petListPanel = new PetList(new Owner(), new List<Pet>).mainPetList;
+
+
+    public static void main(String[] args){
+
+        //example data
+        Owner owner = new Owner();
+        Pet pet1  = new Pet();
+        pet1.setName("Woof");
+        Pet pet2 = new  Pet();
+        pet2.setName("Miau");
+        List<Pet>  testPetList = new ArrayList<>();
+        testPetList.add(pet1);
+        testPetList.add(pet2);
+
+        JPanel petListPanel = new PetList(owner, testPetList).mainPetList;
 
         petListFrame.setContentPane(petListPanel);
         petListFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        petListFrame.setSize(Main.INIT_WIDTH, Main.INIT_HEIGHT);
         petListFrame.pack();
         petListFrame.setVisible(true);
-    }*/
+    }
 }
